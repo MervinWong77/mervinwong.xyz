@@ -7,6 +7,7 @@ import { InteractiveSpot } from "./components/InteractiveSpot";
 import { MusicPlayer } from "./components/MusicPlayer";
 import { SocialLinks } from "./components/SocialLinks";
 import { ThingsInto } from "./components/ThingsInto";
+import { WanderingSwordsman } from "./components/WanderingSwordsman";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <InteractiveSpot />
         <Footer />
       </main>
+      <WanderingSwordsman />
       <MusicPlayer />
     </div>
   );
