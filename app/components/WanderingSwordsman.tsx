@@ -22,7 +22,7 @@ export function WanderingSwordsman() {
 
   return (
     <div
-      className="pointer-events-none fixed bottom-[-0.5rem] right-3 z-30 select-none sm:bottom-[-0.6rem] sm:right-6 md:bottom-[-0.75rem] md:right-10"
+      className="pointer-events-none fixed bottom-[-0.5rem] left-3 z-30 select-none sm:bottom-[-0.6rem] sm:left-6 md:bottom-[-0.75rem] md:left-10"
       aria-hidden
     >
       <div className="relative">
@@ -39,7 +39,7 @@ export function WanderingSwordsman() {
 
         <div
           ref={bubbleRef}
-          className="animate-swordsman-float absolute bottom-[7.1rem] right-[6.4rem] max-w-[11.25rem] rounded-2xl border border-stone-200/85 bg-white/88 px-3 py-2 text-[11px] leading-relaxed text-stone-600 shadow-[0_14px_28px_-18px_rgba(28,25,23,0.32)] backdrop-blur-sm sm:bottom-[8rem] sm:right-[7.2rem] sm:text-xs md:bottom-[9.6rem] md:right-[8.6rem]"
+          className="animate-swordsman-float absolute bottom-[7.1rem] left-[6.4rem] max-w-[11.25rem] rounded-2xl border border-stone-200/85 bg-white/88 px-3 py-2 text-[11px] leading-relaxed text-stone-600 shadow-[0_14px_28px_-18px_rgba(28,25,23,0.32)] backdrop-blur-sm sm:bottom-[8rem] sm:left-[7.2rem] sm:text-xs md:bottom-[9.6rem] md:left-[8.6rem]"
         >
           {messages[0]}
         </div>
