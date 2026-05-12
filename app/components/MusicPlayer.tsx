@@ -1,137 +1,201 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Music, Pause } from "lucide-react";
+import { Pause, Play, Volume2, VolumeX } from "lucide-react";
 
-type AmbientHandle = {
-  stop: () => void;
+const VIDEO_ID = "8O-1qB-fxjc";
+const PLAYER_MOUNT_ID = "yt-bg-music-mount";
+const YT_IFRAME_API = "https://www.youtube.com/iframe_api";
+
+const YT_PLAYING = 1;
+const YT_PAUSED = 2;
+
+type YTPlayerInstance = {
+  playVideo: () => void;
+  pauseVideo: () => void;
+  mute: () => void;
+  unMute: () => void;
+  isMuted: () => boolean;
+  getPlayerState: () => number;
+  destroy: () => void;
 };
 
-function createSoftPad(ctx: AudioContext): AmbientHandle {
-  const master = ctx.createGain();
-  master.gain.setValueAtTime(0, ctx.currentTime);
+type YTPlayerConstructor = new (
+  elementId: string,
+  options: Record<string, unknown>
+) => YTPlayerInstance;
 
-  const filter = ctx.createBiquadFilter();
-  filter.type = "lowpass";
-  filter.frequency.setValueAtTime(420, ctx.currentTime);
-  filter.Q.setValueAtTime(0.7, ctx.currentTime);
+let youtubeApiPromise: Promise<void> | null = null;
 
-  master.connect(filter);
-  filter.connect(ctx.destination);
+function loadYouTubeIframeApi(): Promise<void> {
+  if (typeof window === "undefined") return Promise.resolve();
 
-  const freqs = [196, 246.94, 293.66];
-  const oscillators: OscillatorNode[] = [];
-
-  freqs.forEach((freq, i) => {
-    const osc = ctx.createOscillator();
-    osc.type = "sine";
-    osc.frequency.setValueAtTime(freq, ctx.currentTime);
-    const band = ctx.createGain();
-    band.gain.setValueAtTime(0.018 + i * 0.004, ctx.currentTime);
-    osc.connect(band);
-    band.connect(master);
-    osc.start();
-    oscillators.push(osc);
-  });
-
-  master.gain.linearRampToValueAtTime(0.12, ctx.currentTime + 1.8);
-
-  return {
-    stop: () => {
-      const t = ctx.currentTime;
-      master.gain.cancelScheduledValues(t);
-      master.gain.setValueAtTime(master.gain.value, t);
-      master.gain.linearRampToValueAtTime(0, t + 0.6);
-      window.setTimeout(() => {
-        oscillators.forEach((o) => {
-          try {
-            o.stop();
-          } catch {
-            /* already stopped */
-          }
-        });
-      }, 650);
-    },
+  const w = window as Window & {
+    YT?: { Player: YTPlayerConstructor };
+    onYouTubeIframeAPIReady?: () => void;
   };
+
+  if (w.YT?.Player) return Promise.resolve();
+
+  if (!youtubeApiPromise) {
+    youtubeApiPromise = new Promise<void>((resolve) => {
+      const previous = w.onYouTubeIframeAPIReady;
+      w.onYouTubeIframeAPIReady = () => {
+        previous?.();
+        resolve();
+      };
+
+      const existing = document.querySelector<HTMLScriptElement>(
+        `script[src="${YT_IFRAME_API}"]`
+      );
+      if (!existing) {
+        const tag = document.createElement("script");
+        tag.src = YT_IFRAME_API;
+        tag.async = true;
+        document.head.appendChild(tag);
+      }
+    });
+  }
+
+  return youtubeApiPromise;
 }
 
 export function MusicPlayer() {
+  const playerRef = useRef<YTPlayerInstance | null>(null);
+  const [playerReady, setPlayerReady] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const ctxRef = useRef<AudioContext | null>(null);
-  const padRef = useRef<AmbientHandle | null>(null);
-
-  const teardown = useCallback(async () => {
-    padRef.current?.stop();
-    padRef.current = null;
-    if (ctxRef.current && ctxRef.current.state !== "closed") {
-      try {
-        await ctxRef.current.suspend();
-      } catch {
-        /* ignore */
-      }
-    }
-  }, []);
-
-  const toggle = useCallback(async () => {
-    if (playing) {
-      await teardown();
-      setPlaying(false);
-      return;
-    }
-
-    const Ctx =
-      window.AudioContext ||
-      (
-        window as unknown as {
-          webkitAudioContext?: typeof AudioContext;
-        }
-      ).webkitAudioContext;
-    if (!Ctx) {
-      setPlaying(false);
-      return;
-    }
-
-    if (!ctxRef.current || ctxRef.current.state === "closed") {
-      ctxRef.current = new Ctx();
-    }
-
-    const ctx = ctxRef.current;
-    if (ctx.state === "suspended") {
-      await ctx.resume();
-    }
-
-    padRef.current?.stop();
-    padRef.current = createSoftPad(ctx);
-    setPlaying(true);
-  }, [playing, teardown]);
+  const [muted, setMuted] = useState(true);
 
   useEffect(() => {
+    let cancelled = false;
+
+    void (async () => {
+      try {
+        await loadYouTubeIframeApi();
+        if (cancelled) return;
+
+        const YT = (window as Window & { YT?: { Player: YTPlayerConstructor } })
+          .YT;
+        if (!YT?.Player) return;
+
+        playerRef.current?.destroy();
+
+        new YT.Player(PLAYER_MOUNT_ID, {
+          videoId: VIDEO_ID,
+          width: "200",
+          height: "200",
+          playerVars: {
+            autoplay: 1,
+            mute: 1,
+            loop: 1,
+            playlist: VIDEO_ID,
+            controls: 0,
+            modestbranding: 1,
+            playsinline: 1,
+            rel: 0,
+            iv_load_policy: 3,
+            disablekb: 1,
+            fs: 0,
+          },
+          events: {
+            onReady: (e: { target: YTPlayerInstance }) => {
+              if (cancelled) return;
+              const p = e.target;
+              playerRef.current = p;
+              p.mute();
+              setMuted(true);
+              p.playVideo();
+              setPlayerReady(true);
+            },
+            onStateChange: (e: { data: number }) => {
+              if (cancelled) return;
+              if (e.data === YT_PLAYING) setPlaying(true);
+              if (e.data === YT_PAUSED) setPlaying(false);
+            },
+          },
+        });
+      } catch {
+        /* API unavailable */
+      }
+    })();
+
     return () => {
-      padRef.current?.stop();
-      padRef.current = null;
-      void ctxRef.current?.close();
-      ctxRef.current = null;
+      cancelled = true;
+      playerRef.current?.destroy();
+      playerRef.current = null;
+      setPlayerReady(false);
     };
   }, []);
 
+  const togglePlay = useCallback(() => {
+    const p = playerRef.current;
+    if (!p) return;
+    const state = p.getPlayerState();
+    if (state === YT_PLAYING) {
+      p.pauseVideo();
+    } else {
+      p.playVideo();
+    }
+  }, []);
+
+  const toggleMute = useCallback(() => {
+    const p = playerRef.current;
+    if (!p) return;
+    if (p.isMuted()) {
+      p.unMute();
+      setMuted(false);
+    } else {
+      p.mute();
+      setMuted(true);
+    }
+  }, []);
+
   return (
-    <div className="pointer-events-none fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 md:bottom-8 md:right-8">
-      <p className="pointer-events-none max-w-[11rem] rounded-lg bg-white/85 px-3 py-1.5 text-[10px] leading-snug text-stone-500 shadow-sm ring-1 ring-stone-200/70 backdrop-blur-sm">
-        Optional soft pad — off by default. Tap to play or pause.
-      </p>
-      <button
-        type="button"
-        onClick={() => void toggle()}
-        aria-pressed={playing}
-        aria-label={playing ? "Pause ambient sound" : "Play ambient sound"}
-        className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full border border-stone-200/90 bg-white/90 text-stone-700 shadow-md shadow-stone-200/50 backdrop-blur-md transition hover:scale-105 hover:border-stone-300 hover:text-stone-900 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400 active:scale-95"
+    <>
+      <div
+        className="pointer-events-none fixed top-0 -left-[9999px] h-[200px] w-[200px] overflow-hidden opacity-0"
+        aria-hidden
       >
-        {playing ? (
-          <Pause className="h-5 w-5" strokeWidth={1.75} aria-hidden />
-        ) : (
-          <Music className="h-5 w-5" strokeWidth={1.75} aria-hidden />
-        )}
-      </button>
-    </div>
+        <div id={PLAYER_MOUNT_ID} />
+      </div>
+
+      <div className="pointer-events-none fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 md:bottom-8 md:right-8">
+        <p className="pointer-events-none max-w-[14rem] rounded-xl bg-white/90 px-3 py-2 text-[10px] leading-snug text-stone-500 shadow-sm ring-1 ring-stone-200/70 backdrop-blur-sm md:max-w-[16rem] md:text-[11px]">
+          Soft background track via YouTube. Autoplays{" "}
+          <span className="whitespace-nowrap">muted</span> — tap the speaker to
+          unmute.
+        </p>
+        <div className="pointer-events-auto flex items-center gap-1.5 rounded-full border border-stone-200/90 bg-white/90 p-1 shadow-md shadow-stone-200/40 backdrop-blur-md ring-1 ring-white/60">
+          <button
+            type="button"
+            disabled={!playerReady}
+            onClick={togglePlay}
+            aria-pressed={playing}
+            aria-label={playing ? "Pause background music" : "Play background music"}
+            className="flex h-11 w-11 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400 disabled:cursor-not-allowed disabled:opacity-40 active:scale-95"
+          >
+            {playing ? (
+              <Pause className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+            ) : (
+              <Play className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+            )}
+          </button>
+          <button
+            type="button"
+            disabled={!playerReady}
+            onClick={toggleMute}
+            aria-pressed={!muted}
+            aria-label={muted ? "Unmute background music" : "Mute background music"}
+            className="flex h-11 w-11 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400 disabled:cursor-not-allowed disabled:opacity-40 active:scale-95"
+          >
+            {muted ? (
+              <VolumeX className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+            ) : (
+              <Volume2 className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+            )}
+          </button>
+        </div>
+      </div>
+    </>
   );
 }
