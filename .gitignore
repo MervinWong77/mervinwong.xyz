@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large local video assets (GitHub 100MB file limit). Keep files in public/videos/ locally or host externally.
+public/videos/*
+!public/videos/.gitkeep
