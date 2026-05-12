@@ -159,25 +159,20 @@ export function MusicPlayer() {
         <div id={PLAYER_MOUNT_ID} />
       </div>
 
-      <div className="pointer-events-none fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 md:bottom-8 md:right-8">
-        <p className="pointer-events-none max-w-[14rem] rounded-xl bg-white/90 px-3 py-2 text-[10px] leading-snug text-stone-500 shadow-sm ring-1 ring-stone-200/70 backdrop-blur-sm md:max-w-[16rem] md:text-[11px]">
-          Soft background track via YouTube. Autoplays{" "}
-          <span className="whitespace-nowrap">muted</span> — tap the speaker to
-          unmute.
-        </p>
-        <div className="pointer-events-auto flex items-center gap-1.5 rounded-full border border-stone-200/90 bg-white/90 p-1 shadow-md shadow-stone-200/40 backdrop-blur-md ring-1 ring-white/60">
+      <div className="pointer-events-none fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8">
+        <div className="pointer-events-auto flex items-center gap-1 rounded-full border border-stone-200/85 bg-white/82 p-1 shadow-[0_16px_36px_-20px_rgba(28,25,23,0.24)] backdrop-blur-md ring-1 ring-white/70">
           <button
             type="button"
             disabled={!playerReady}
             onClick={togglePlay}
             aria-pressed={playing}
             aria-label={playing ? "Pause background music" : "Play background music"}
-            className="flex h-11 w-11 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400 disabled:cursor-not-allowed disabled:opacity-40 active:scale-95"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100/80 hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400 disabled:cursor-not-allowed disabled:opacity-40 active:scale-95"
           >
             {playing ? (
-              <Pause className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+              <Pause className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />
             ) : (
-              <Play className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+              <Play className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />
             )}
           </button>
           <button
@@ -186,12 +181,12 @@ export function MusicPlayer() {
             onClick={toggleMute}
             aria-pressed={!muted}
             aria-label={muted ? "Unmute background music" : "Mute background music"}
-            className="flex h-11 w-11 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400 disabled:cursor-not-allowed disabled:opacity-40 active:scale-95"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100/80 hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400 disabled:cursor-not-allowed disabled:opacity-40 active:scale-95"
           >
             {muted ? (
-              <VolumeX className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+              <VolumeX className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />
             ) : (
-              <Volume2 className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+              <Volume2 className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />
             )}
           </button>
         </div>
