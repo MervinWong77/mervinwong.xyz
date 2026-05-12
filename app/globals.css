@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfaf9;
+  --foreground: #1c1917;
+  --muted: #78716c;
+  --card: #ffffff;
+  --accent-warm: #fff0e8;
+  --accent-cool: #e8f2ff;
+  --accent-lilac: #f3edff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
   }
+  50% {
+    transform: translateY(-14px) scale(1.02);
+  }
+}
+
+@keyframes soft-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(2%, -1%) rotate(0.5deg);
+  }
+  66% {
+    transform: translate(-1%, 2%) rotate(-0.5deg);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentle-float 9s ease-in-out infinite;
+}
+
+.animate-soft-drift {
+  animation: soft-drift 18s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out forwards;
+}
+
+@keyframes quote-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-quote-in {
+  animation: quote-in 0.45s ease-out;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background-color: rgb(254 215 170 / 0.45);
+  color: var(--foreground);
 }
