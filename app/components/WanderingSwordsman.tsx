@@ -22,24 +22,24 @@ export function WanderingSwordsman() {
 
   return (
     <div
-      className="pointer-events-none fixed bottom-0 right-[-2.8rem] z-30 select-none sm:right-[-2.2rem] md:right-[-1.2rem]"
+      className="pointer-events-none fixed bottom-[-0.5rem] right-3 z-30 select-none sm:bottom-[-0.6rem] sm:right-6 md:bottom-[-0.75rem] md:right-10"
       aria-hidden
     >
       <div className="relative">
-        <div className="animate-swordsman-float relative h-[12.5rem] w-[9.5rem] opacity-70 sm:h-[14rem] sm:w-[10.25rem] md:h-[16.5rem] md:w-[12rem]">
+        <div className="animate-swordsman-float relative h-[12.75rem] w-[10rem] opacity-62 sm:h-[14.25rem] sm:w-[11rem] md:h-[17rem] md:w-[12.75rem]">
           <Image
-            src="/characters/wandering-swordsman.svg"
+            src="/characters/characters.png"
             alt=""
             fill
             priority={false}
-            className="object-contain drop-shadow-[0_22px_35px_rgba(73,59,51,0.18)]"
+            className="object-contain drop-shadow-[0_20px_30px_rgba(73,59,51,0.15)]"
           />
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#fbfaf9] via-[#fbfaf9]/45 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-[#fbfaf9] via-[#fbfaf9]/62 to-transparent" />
         </div>
 
         <div
           ref={bubbleRef}
-          className="animate-swordsman-float absolute bottom-[7.6rem] right-[5.4rem] max-w-[11rem] rounded-2xl border border-stone-200/85 bg-white/86 px-3 py-2 text-[11px] leading-relaxed text-stone-600 shadow-[0_16px_30px_-18px_rgba(28,25,23,0.35)] backdrop-blur-sm sm:bottom-[8.5rem] sm:right-[6.25rem] sm:text-xs md:bottom-[10rem] md:right-[7.4rem]"
+          className="animate-swordsman-float absolute bottom-[7.1rem] right-[6.4rem] max-w-[11.25rem] rounded-2xl border border-stone-200/85 bg-white/88 px-3 py-2 text-[11px] leading-relaxed text-stone-600 shadow-[0_14px_28px_-18px_rgba(28,25,23,0.32)] backdrop-blur-sm sm:bottom-[8rem] sm:right-[7.2rem] sm:text-xs md:bottom-[9.6rem] md:right-[8.6rem]"
         >
           {messages[0]}
         </div>
