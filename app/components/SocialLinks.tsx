@@ -33,22 +33,22 @@ function IconGitHub({ className }: { className?: string }) {
 const links = [
   {
     label: "Instagram",
-    href: "https://instagram.com/",
+    href: "https://www.instagram.com/mervin_wong",
     Icon: IconInstagram,
   },
   {
     label: "Facebook",
-    href: "https://facebook.com/",
+    href: "https://www.facebook.com/mervin.hao/",
     Icon: IconFacebook,
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/",
+    href: "https://www.linkedin.com/in/mervin-wong-ch/",
     Icon: IconLinkedIn,
   },
   {
     label: "GitHub",
-    href: "https://github.com/",
+    href: "https://github.com/MervinWong77",
     Icon: IconGitHub,
   },
 ] as const;
@@ -66,7 +66,7 @@ export function SocialLinks() {
         Connect
       </h2>
       <p className="mt-3 max-w-md text-stone-600">
-        Say hello — placeholder links for now; swap in your profiles anytime.
+        Say hello — I&apos;d love to connect.
       </p>
       <ul className="mt-6 flex flex-wrap gap-3">
         {links.map(({ label, href, Icon }) => (
