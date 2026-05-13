@@ -94,6 +94,20 @@
   animation: swordsman-float 10s ease-in-out infinite;
 }
 
+@keyframes corner-pixel-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.animate-corner-pixel-float {
+  animation: corner-pixel-float 12s ease-in-out infinite;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
