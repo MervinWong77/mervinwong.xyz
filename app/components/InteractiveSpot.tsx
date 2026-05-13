@@ -102,8 +102,9 @@ export function InteractiveSpot() {
             <Image
               src={`/illustrations/little-corner/${illustration}`}
               alt=""
-              fill
-              className="object-contain"
+              width={80}
+              height={80}
+              className="h-20 w-20 object-contain"
             />
           </div>
         </div>
