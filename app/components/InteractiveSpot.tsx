@@ -96,7 +96,7 @@ export function InteractiveSpot() {
           </p>
           <div
             key={`${illustration}-${thoughtIndex}`}
-            className="animate-quote-in animate-corner-pixel-float pointer-events-none absolute bottom-4 right-4 h-12 w-12 opacity-55 sm:h-14 sm:w-14"
+            className="animate-quote-in animate-corner-pixel-float pointer-events-none absolute bottom-5 right-6 h-20 w-20 opacity-90"
             aria-hidden
           >
             <Image
