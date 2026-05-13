@@ -96,7 +96,7 @@ export function InteractiveSpot() {
           </p>
           <div
             key={`${illustration}-${thoughtIndex}`}
-            className="animate-quote-in animate-corner-pixel-float pointer-events-none absolute bottom-5 right-6 h-20 w-20 opacity-90"
+            className="animate-quote-in animate-corner-pixel-float pointer-events-none select-none absolute bottom-5 right-6 h-20 w-20 opacity-90"
             aria-hidden
           >
             <Image
@@ -104,7 +104,7 @@ export function InteractiveSpot() {
               alt=""
               width={80}
               height={80}
-              className="h-20 w-20 object-contain"
+              className="h-20 w-20 select-none drop-shadow-[0_4px_10px_rgba(120,113,108,0.22)] [image-rendering:auto]"
             />
           </div>
         </div>
