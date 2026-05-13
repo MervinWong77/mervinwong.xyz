@@ -117,3 +117,20 @@ body {
   background-color: rgb(254 215 170 / 0.45);
   color: var(--foreground);
 }
+@keyframes cornerPixelFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-corner-pixel-float {
+  animation: cornerPixelFloat 5s ease-in-out infinite;
+}
