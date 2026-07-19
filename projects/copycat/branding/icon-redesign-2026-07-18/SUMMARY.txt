@@ -1,0 +1,7 @@
+A-cat-face-on-docs: {'white_px': 34, 'teal_px': 220, 'center': (245, 245, 245, 255), 'pass': True}
+A2-cream-face-docs: {'white_px': 72, 'teal_px': 181, 'center': (15, 118, 110, 255), 'pass': True}
+B-twin-heads: {'white_px': 79, 'teal_px': 165, 'center': (15, 118, 110, 255), 'pass': True}
+C-peek-doc: {'white_px': 89, 'teal_px': 186, 'center': (252, 252, 252, 255), 'pass': True}
+E-face-plus-doc-stack: {'white_px': 85, 'teal_px': 163, 'center': (15, 118, 110, 255), 'pass': True}
+
+WINNER=A2-cream-face-docs

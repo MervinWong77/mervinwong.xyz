@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <!-- Bold C as thick annulus segment -->
+  <path fill="#111111" fill-rule="evenodd" d="
+    M96,34
+    C78,18 50,18 34,34
+    C18,50 18,78 34,94
+    C50,110 78,110 96,94
+    L84,82
+    C72,94 52,94 42,84
+    C32,74 32,54 42,44
+    C52,34 72,34 84,46
+    Z"/>
+  <!-- Overlapping sheets inside the C opening -->
+  <rect x="70" y="46" width="28" height="34" rx="5" fill="#111111"/>
+  <rect x="78" y="54" width="28" height="34" rx="5" fill="#111111"/>
+
+</svg>

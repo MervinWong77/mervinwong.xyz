@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <path fill="#111111" fill-rule="evenodd" d="
+    M30,52
+    L42,22 L54,48 L74,48 L86,22 L98,52
+    C108,62 112,78 110,96
+    C108,114 90,120 64,120
+    C38,120 20,114 18,96
+    C16,78 20,62 30,52 Z
+    M44,66 h22 v30 h-22 z
+    M54,74 h22 v30 h-22 z"/>
+
+</svg>

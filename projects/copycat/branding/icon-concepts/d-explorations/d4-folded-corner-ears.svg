@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="CopyCat D4 folded corner with ear peaks">
+  <!-- D4: Classic folded-corner document + duplicate behind. Ears on front top edge. -->
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <!-- Back doc -->
+  <path fill="#111111" d="
+    M 40 24
+    H 86
+    L 102 40
+    V 98
+    A 10 10 0 0 1 92 108
+    H 40
+    A 10 10 0 0 1 30 98
+    V 34
+    A 10 10 0 0 1 40 24
+    Z"/>
+  <!-- Fold hint on back (cut) -->
+  <path fill="#FFFFFF" d="M 86 24 L 86 40 L 102 40 Z"/>
+  <!-- Front doc with ears + fold -->
+  <path fill="#111111" d="
+    M 22 40
+    H 48
+    L 55 28
+    L 62 40
+    L 69 28
+    L 76 40
+    H 78
+    L 94 56
+    V 110
+    A 10 10 0 0 1 84 120
+    H 32
+    A 10 10 0 0 1 22 110
+    V 50
+    A 10 10 0 0 1 32 40
+    H 22
+    Z"/>
+  <path fill="#FFFFFF" d="M 78 40 L 78 56 L 94 56 Z"/>
+</svg>

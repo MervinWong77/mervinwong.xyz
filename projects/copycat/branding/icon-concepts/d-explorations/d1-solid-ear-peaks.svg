@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="CopyCat D1 solid stack with ear peaks">
+  <!-- D1: Solid filled duplicate docs. Ears = two triangular peaks on front sheet top edge. -->
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <!-- Back document -->
+  <path fill="#111111" d="
+    M 42 28
+    H 94
+    A 10 10 0 0 1 104 38
+    V 98
+    A 10 10 0 0 1 94 108
+    H 42
+    A 10 10 0 0 1 32 98
+    V 38
+    A 10 10 0 0 1 42 28
+    Z"/>
+  <!-- Front document with ear peaks -->
+  <path fill="#111111" d="
+    M 24 40
+    H 48
+    L 56 28
+    L 64 40
+    L 72 28
+    L 80 40
+    H 86
+    A 10 10 0 0 1 96 50
+    V 106
+    A 10 10 0 0 1 86 116
+    H 34
+    A 10 10 0 0 1 24 106
+    V 50
+    A 10 10 0 0 1 34 40
+    H 24
+    Z"/>
+</svg>

@@ -1,0 +1,46 @@
+{
+  "color": {
+    "surface": {
+      "primary": {
+        "light": "#F8F8F7",
+        "dark": "#171717"
+      },
+      "secondary": {
+        "light": "#FFFFFF",
+        "dark": "#222222"
+      }
+    },
+    "text": {
+      "primary": {
+        "light": "#1C1C1E",
+        "dark": "#F5F5F7"
+      },
+      "secondary": {
+        "light": "#5F6368",
+        "dark": "#B0B3B8"
+      }
+    },
+    "accent": {
+      "primary": "#F59E42",
+      "success": "#22C55E",
+      "warning": "#FACC15",
+      "danger": "#EF4444",
+      "info": "#3B82F6"
+    },
+    "border": {
+      "default": {
+        "light": "#E5E7EB",
+        "dark": "#323232"
+      }
+    },
+    "journey": {
+      "idle": "#94A3B8",
+      "scanning": "#3B82F6",
+      "verifying": "#A855F7",
+      "duplicates": "#F59E42",
+      "cleanup": "#22C55E",
+      "complete": "#10B981",
+      "error": "#EF4444"
+    }
+  }
+}

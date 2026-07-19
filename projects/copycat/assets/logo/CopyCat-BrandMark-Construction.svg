@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <rect width="1024" height="1024" fill="#FFFFFF"/>
+  <g stroke="#00A0FF" stroke-width="1" fill="none" opacity="0.35">
+    <rect x="102" y="102" width="820" height="820"/>
+    <rect x="154" y="154" width="716" height="716"/>
+    <line x1="512" y1="0" x2="512" y2="1024"/>
+    <line x1="0" y1="512" x2="1024" y2="512"/>
+  </g>
+  <!-- CopyCat brand mark. Source of truth. Twin compact cats (C2-11 final). -->
+  <g fill="#000000" transform="translate(8, 18)">
+    <path d="M417.0,230.0 L459.0,54.0 L495.0,230.0 L637.0,230.0 L673.0,54.0 L715.0,230.0 C874.0,238.0 894.0,448.0 866.0,498.0 C866.0,770.0 266.0,770.0 266.0,498.0 C238.0,448.0 258.0,238.0 417.0,230.0 Z"/>
+    <path d="M321.0,300.0 L363.0,124.0 L399.0,300.0 L541.0,300.0 L577.0,124.0 L619.0,300.0 C778.0,308.0 798.0,518.0 770.0,568.0 C770.0,840.0 170.0,840.0 170.0,568.0 C142.0,518.0 162.0,308.0 321.0,300.0 Z"/>
+  </g>
+</svg>

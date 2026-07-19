@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="CopyCat D7 dual-tone via knockouts">
+  <!-- D7: Single colour, but front sheet uses white inset lines to suggest layers
+       without a second colour. Ears as peaks. Reads as documents first. -->
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <!-- Back -->
+  <rect x="42" y="26" width="62" height="76" rx="10" fill="#111111"/>
+  <!-- Front -->
+  <path fill="#111111" d="
+    M 24 40
+    H 50
+    L 57 28
+    L 64 40
+    L 71 28
+    L 78 40
+    H 86
+    A 10 10 0 0 1 96 50
+    V 108
+    A 10 10 0 0 1 86 118
+    H 34
+    A 10 10 0 0 1 24 108
+    V 50
+    A 10 10 0 0 1 34 40
+    H 24
+    Z"/>
+  <!-- Content suggestion lines (knockout) — optional document cue -->
+  <rect x="36" y="62" width="48" height="5" rx="2.5" fill="#FFFFFF"/>
+  <rect x="36" y="74" width="40" height="5" rx="2.5" fill="#FFFFFF"/>
+  <rect x="36" y="86" width="32" height="5" rx="2.5" fill="#FFFFFF"/>
+</svg>

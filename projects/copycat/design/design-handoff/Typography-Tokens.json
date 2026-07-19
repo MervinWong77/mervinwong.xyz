@@ -1,0 +1,64 @@
+{
+  "typography": {
+    "display": {
+      "font": "SF Pro Display",
+      "size": 40,
+      "weight": "Bold",
+      "lineHeight": 48
+    },
+    "h1": {
+      "font": "SF Pro Display",
+      "size": 34,
+      "weight": "Bold",
+      "lineHeight": 41
+    },
+    "h2": {
+      "font": "SF Pro Display",
+      "size": 28,
+      "weight": "Semibold",
+      "lineHeight": 34
+    },
+    "h3": {
+      "font": "SF Pro Display",
+      "size": 22,
+      "weight": "Semibold",
+      "lineHeight": 28
+    },
+    "title": {
+      "font": "SF Pro Display",
+      "size": 17,
+      "weight": "Semibold",
+      "lineHeight": 22
+    },
+    "body": {
+      "font": "SF Pro Text",
+      "size": 15,
+      "weight": "Regular",
+      "lineHeight": 22
+    },
+    "bodyEmphasis": {
+      "font": "SF Pro Text",
+      "size": 15,
+      "weight": "Medium",
+      "lineHeight": 22
+    },
+    "caption": {
+      "font": "SF Pro Text",
+      "size": 13,
+      "weight": "Regular",
+      "lineHeight": 18
+    },
+    "footnote": {
+      "font": "SF Pro Text",
+      "size": 11,
+      "weight": "Regular",
+      "lineHeight": 16
+    },
+    "mono": {
+      "font": "SF Mono",
+      "size": 12,
+      "weight": "Regular",
+      "lineHeight": 16
+    }
+  }
+}

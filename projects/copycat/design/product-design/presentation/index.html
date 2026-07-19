@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CopyCat — UI Design Presentation</title>
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="mockups.css" />
+</head>
+<body>
+  <div class="deck">
+    <nav class="deck-nav">
+      <a href="#cover">Cover</a>
+      <a href="#s1">1 Home</a>
+      <a href="#s2">2 Folders</a>
+      <a href="#s3">3 Scanning</a>
+      <a href="#s4">4 Completed</a>
+      <a href="#s5">5 Results</a>
+      <a href="#s6">6 Review</a>
+      <a href="#s7">7 Cleanup</a>
+      <a href="#s8">8 Settings</a>
+      <a href="#type">Type</a>
+      <a href="#layout">Layout</a>
+    </nav>
+
+    <!-- COVER -->
+    <header class="cover" id="cover">
+      <p class="caption teal" style="font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">CopyCat · Twilight Teal · v1</p>
+      <h1>UI Design Presentation</h1>
+      <p class="meta">Window 720×560 · Dark-first · SF Pro · Hand-off ready</p>
+      <div class="swatches">
+        <div class="swatch" style="background:#0D9488" title="Teal.500"></div>
+        <div class="swatch" style="background:#14B8A6" title="Teal.400"></div>
+        <div class="swatch" style="background:#E8B84A" title="Gold"></div>
+        <div class="swatch" style="background:#34D399" title="Mint"></div>
+        <div class="swatch" style="background:#F07167" title="Coral"></div>
+        <div class="swatch" style="background:#121414;border-color:#3a4242" title="Base"></div>
+        <div class="swatch" style="background:#1C1F1F" title="Raised"></div>
+        <div class="swatch" style="background:#2A2F2F" title="Border"></div>
+      </div>
+    </header>
+
+    <!-- ========== 1 HOME ========== -->
+    <section class="section" id="s1">
+      <div class="section-label"><span class="num">01</span><h2>Home</h2></div>
+      <div class="frames">
+
+        <!-- Default -->
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Default</span>
+            <span class="tag anim">Anim · mascot breathe 3.2s · CTA glow pulse 4s</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content stack-20">
+              <div class="stage center">
+                <div class="mascot" data-mascot="idle"></div>
+              </div>
+              <div class="center stack-8">
+                <div class="t1">Find identical files</div>
+                <div class="body">Choose folders. CopyCat finds exact duplicates.<br>Nothing moves to Trash until you confirm.</div>
+              </div>
+              <div class="center"><button class="btn btn-primary">Choose Folders</button></div>
+              <div class="center gap-chips">
+                <span class="chip">Downloads</span>
+                <span class="chip">Desktop</span>
+                <span class="chip">Documents</span>
+              </div>
+              <div class="mt-auto center footnote">⌘O Browse · Drop folders anywhere</div>
+            </div>
+          </div>
+          <div class="spec-rail">
+            <span class="dim">brand · t1 28/650 · body 15 · CTA h40 r10 · chips h28</span>
+          </div>
+        </div>
+
+        <!-- Empty -->
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag">Empty</span>
+            <span class="tag anim">Anim · soft idle sway</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content stack-20">
+              <div class="stage center">
+                <div class="mascot" data-mascot="nap"></div>
+              </div>
+              <div class="center stack-8">
+                <div class="t1">Ready when you are</div>
+                <div class="body">No folders selected yet.</div>
+              </div>
+              <div class="dropwell center">Drop folders here — or Choose Folders</div>
+              <div class="center"><button class="btn btn-primary">Choose Folders</button></div>
+              <div class="mt-auto center footnote">Suggested chips appear after first browse</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hover -->
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Hover</span>
+            <span class="tag anim">Anim · CTA lift 1px · chip fill 120ms</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content stack-20">
+              <div class="stage center"><div class="mascot" data-mascot="idle"></div></div>
+              <div class="center stack-8">
+                <div class="t1">Find identical files</div>
+                <div class="body">Choose folders. CopyCat finds exact duplicates.</div>
+              </div>
+              <div class="center"><button class="btn btn-primary is-hover">Choose Folders</button></div>
+              <div class="center gap-chips">
+                <span class="chip is-hover">Downloads</span>
+                <span class="chip">Desktop</span>
+                <span class="chip">Documents</span>
+              </div>
+              <div class="dropwell is-hover center">Drop to add · Release to select</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Selected -->
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag gold">Selected</span>
+            <span class="tag anim">Anim · chip teal border spring · Scan CTA enable</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content stack-16">
+              <div class="row between">
+                <div class="t3">Locations</div>
+                <button class="btn btn-quiet">+ Add</button>
+              </div>
+              <div class="stack-8">
+                <div class="loc-row" style="background:rgba(13,148,136,0.1);border:1px solid rgba(13,148,136,0.35);border-radius:10px">
+                  <span class="folder-ic teal"></span>
+                  <div class="grow">
+                    <div class="name">Downloads</div>
+                    <div class="path">~/Downloads</div>
+                  </div>
+                  <span class="rm">✕</span>
+                </div>
+                <div class="loc-row">
+                  <span class="folder-ic"></span>
+                  <div class="grow">
+                    <div class="name">Desktop</div>
+                    <div class="path">~/Desktop</div>
+                  </div>
+                  <span class="rm">✕</span>
+                </div>
+              </div>
+              <div class="center gap-chips">
+                <span class="chip is-selected">Downloads</span>
+                <span class="chip is-selected">Desktop</span>
+                <span class="chip">Documents</span>
+              </div>
+              <div class="mt-auto center stack-12">
+                <button class="btn btn-primary">Scan 2 Folders</button>
+                <div class="footnote">Nothing deleted until you confirm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== 2 FOLDER SELECTION ========== -->
+    <section class="section" id="s2">
+      <div class="section-label"><span class="num">02</span><h2>Folder selection</h2></div>
+      <div class="frames">
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Default · Sheet</span>
+            <span class="tag anim">Anim · sheet spring y+16→0 · scrim 180ms</span>
+          </div>
+          <div class="window tall">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content" style="padding:0;opacity:.35">
+              <div style="padding:28px 32px" class="center"><div class="t2">Find identical files</div></div>
+            </div>
+            <div class="sheet-scrim">
+              <div class="sheet stack-16">
+                <div class="stack-8">
+                  <div class="t3">Add folders to scan</div>
+                  <div class="caption">Exact duplicates only · Read access while scanning</div>
+                </div>
+                <button class="btn btn-primary" style="width:100%">Browse…</button>
+                <div class="caption" style="font-weight:600;color:var(--text-2)">Suggestions</div>
+                <div class="gap-chips">
+                  <span class="chip">Downloads</span>
+                  <span class="chip">Desktop</span>
+                  <span class="chip">Documents</span>
+                  <span class="chip">Pictures</span>
+                </div>
+                <div class="dropwell center" style="padding:16px">Or drop folders on this sheet</div>
+                <div class="row between">
+                  <button class="btn btn-quiet">Cancel</button>
+                  <button class="btn btn-primary is-disabled">Add Selected</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag">Empty</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content" style="padding:0">
+              <div class="sheet-scrim">
+                <div class="sheet stack-16">
+                  <div class="t3">Add folders to scan</div>
+                  <div class="mascot sm" data-mascot="peek" style="margin:0 auto"></div>
+                  <div class="body center">No recent folders yet.</div>
+                  <button class="btn btn-primary" style="width:100%">Browse…</button>
+                  <div class="dropwell center">Drop folders here</div>
+                  <div class="row between">
+                    <button class="btn btn-quiet">Cancel</button>
+                    <button class="btn btn-primary is-disabled">Add Selected</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Hover</span>
+            <span class="tag anim">Anim · suggestion chip fill</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content" style="padding:0">
+              <div class="sheet-scrim">
+                <div class="sheet stack-16">
+                  <div class="t3">Add folders to scan</div>
+                  <button class="btn btn-primary is-hover" style="width:100%">Browse…</button>
+                  <div class="gap-chips">
+                    <span class="chip is-hover">Downloads</span>
+                    <span class="chip">Desktop</span>
+                    <span class="chip">Documents</span>
+                  </div>
+                  <div class="dropwell is-hover center">Release to add</div>
+                  <div class="row between">
+                    <button class="btn btn-quiet is-hover">Cancel</button>
+                    <button class="btn btn-primary is-disabled">Add Selected</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag gold">Selected</span>
+            <span class="tag anim">Anim · check mark pop · enable Add</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content" style="padding:0">
+              <div class="sheet-scrim">
+                <div class="sheet stack-16">
+                  <div class="t3">Add folders to scan</div>
+                  <div class="stack-8">
+                    <div class="loc-row is-hover" style="background:rgba(13,148,136,0.12);border:1px solid rgba(13,148,136,0.4);border-radius:10px">
+                      <span class="teal">✓</span>
+                      <div class="grow"><div class="name">Downloads</div><div class="path">~/Downloads</div></div>
+                    </div>
+                    <div class="loc-row" style="background:rgba(13,148,136,0.12);border:1px solid rgba(13,148,136,0.4);border-radius:10px">
+                      <span class="teal">✓</span>
+                      <div class="grow"><div class="name">Pictures</div><div class="path">~/Pictures</div></div>
+                    </div>
+                  </div>
+                  <div class="gap-chips">
+                    <span class="chip is-selected">Downloads</span>
+                    <span class="chip is-selected">Pictures</span>
+                    <span class="chip">Desktop</span>
+                  </div>
+                  <div class="row between">
+                    <button class="btn btn-quiet">Cancel</button>
+                    <button class="btn btn-primary">Add 2 Folders</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== 3 SCANNING ========== -->
+    <section class="section" id="s3">
+      <div class="section-label"><span class="num">03</span><h2>Scanning</h2></div>
+      <div class="frames">
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Default</span>
+            <span class="tag anim">Anim · paw trail loop · progress ease · phase crossfade</span>
+          </div>
+          <div class="window tall">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Scanning…</div></div>
+            <div class="content stack-16 center">
+              <div class="stage">
+                <div class="mascot lg" data-mascot="hunt"></div>
+              </div>
+              <div class="paw-path">· · · ✦ · · ·</div>
+              <div class="t2">Hunting for twins</div>
+              <div class="body">Comparing file contents · Downloads, Desktop</div>
+              <div class="stack-8" style="width:100%;max-width:360px;margin:0 auto;text-align:left">
+                <div class="row between caption"><span>Matching</span><span class="teal">62%</span></div>
+                <div class="progress"><i style="width:62%"></i></div>
+              </div>
+              <div class="caption">About a minute left</div>
+              <div class="mt-auto"><button class="btn btn-quiet">Cancel Scan</button></div>
+            </div>
+          </div>
+          <div class="spec-rail"><span class="dim">hero mascot · progress 6px teal · no MB/s · no stepper</span></div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag gold">Discovery moment</span>
+            <span class="tag anim">Anim · toast slide+fade · gold eyes flash · twin badge pop</span>
+          </div>
+          <div class="window tall">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Scanning…</div></div>
+            <div class="content stack-16 center">
+              <div class="stage"><div class="mascot lg" data-mascot="found"></div></div>
+              <div class="t2">Hunting for twins</div>
+              <div class="discovery" style="text-align:left;width:100%;max-width:360px;margin:0 auto">
+                <div class="row between">
+                  <span class="t3" style="font-size:15px">Found a twin</span>
+                  <span class="caption gold">+240 MB</span>
+                </div>
+                <div class="caption" style="margin-top:4px">IMG_2841.HEIC × 2</div>
+                <div class="thumbs">
+                  <div class="thumb" style="background:linear-gradient(135deg,#3d4a4a,#2a3333)"></div>
+                  <div class="thumb" style="background:linear-gradient(135deg,#3d4a4a,#2a3333)"></div>
+                </div>
+              </div>
+              <div class="stack-8" style="width:100%;max-width:360px;margin:0 auto;text-align:left">
+                <div class="progress"><i style="width:78%"></i></div>
+              </div>
+              <div class="mt-auto"><button class="btn btn-quiet">Cancel Scan</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Hover · Cancel</span>
+            <span class="tag anim">Anim · cancel underline fade-in</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Scanning…</div></div>
+            <div class="content stack-16 center">
+              <div class="stage"><div class="mascot" data-mascot="hunt"></div></div>
+              <div class="t2">Sizing files</div>
+              <div class="progress" style="width:100%;max-width:360px;margin:0 auto"><i style="width:28%"></i></div>
+              <div class="mt-auto"><button class="btn btn-quiet is-hover">Cancel Scan</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag">Empty · early scan</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Scanning…</div></div>
+            <div class="content stack-16 center">
+              <div class="stage"><div class="mascot" data-mascot="hunt"></div></div>
+              <div class="paw-path">· · ·</div>
+              <div class="t2">Getting started</div>
+              <div class="body">Looking through your folders…</div>
+              <div class="progress" style="width:100%;max-width:360px;margin:0 auto"><i style="width:6%"></i></div>
+              <div class="caption">No twins yet — still exploring</div>
+              <div class="mt-auto"><button class="btn btn-quiet">Cancel Scan</button></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== 4 SCAN COMPLETED ========== -->
+    <section class="section" id="s4">
+      <div class="section-label"><span class="num">04</span><h2>Scan completed</h2></div>
+      <div class="frames">
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Default · found</span>
+            <span class="tag anim">Anim · gold count-up · confetti sparks 600ms · CTA delay 200ms</span>
+          </div>
+          <div class="window tall">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Scan Complete</div></div>
+            <div class="content stack-20 center">
+              <div class="stage"><div class="mascot lg" data-mascot="celebrate"></div></div>
+              <div class="stack-8">
+                <div class="display gold">12.4 GB</div>
+                <div class="t3">recoverable</div>
+              </div>
+              <div class="body">48 duplicate groups · 96 files</div>
+              <div class="caption">Across Downloads, Desktop</div>
+              <div class="mt-auto stack-12" style="width:100%">
+                <button class="btn btn-primary" style="width:100%">Review Duplicates</button>
+                <button class="btn btn-quiet" style="width:100%">Scan Again</button>
+              </div>
+            </div>
+          </div>
+          <div class="spec-rail"><span class="dim">display 40 gold · one hero metric · mint eyes on celebrate</span></div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag">Empty · none found</span>
+            <span class="tag anim">Anim · soft settle · no confetti</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Scan Complete</div></div>
+            <div class="content stack-20 center">
+              <div class="stage"><div class="mascot" data-mascot="nap"></div></div>
+              <div class="t2">All clear</div>
+              <div class="body">No exact duplicates in these folders.</div>
+              <div class="mt-auto stack-12" style="width:100%">
+                <button class="btn btn-primary" style="width:100%">Choose Other Folders</button>
+                <button class="btn btn-quiet" style="width:100%">Done</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Hover</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Scan Complete</div></div>
+            <div class="content stack-20 center">
+              <div class="stage"><div class="mascot" data-mascot="celebrate"></div></div>
+              <div class="display gold">12.4 GB</div>
+              <div class="body">48 duplicate groups</div>
+              <div class="mt-auto stack-12" style="width:100%">
+                <button class="btn btn-primary is-hover" style="width:100%">Review Duplicates</button>
+                <button class="btn btn-quiet is-hover" style="width:100%">Scan Again</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag gold">Selected · focus CTA</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Scan Complete</div></div>
+            <div class="content stack-20 center">
+              <div class="stage"><div class="mascot" data-mascot="celebrate"></div></div>
+              <div class="display gold">12.4 GB</div>
+              <div class="mt-auto">
+                <button class="btn btn-primary" style="width:100%;outline:2px solid var(--teal-400);outline-offset:3px">Review Duplicates</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== 5 RESULTS ========== -->
+    <section class="section" id="s5">
+      <div class="section-label"><span class="num">05</span><h2>Results</h2></div>
+      <div class="frames">
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Default</span>
+            <span class="tag anim">Anim · list stagger 40ms · gold sticky</span>
+          </div>
+          <div class="window tall">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Results</div></div>
+            <div class="content stack-16" style="padding-bottom:12px">
+              <div class="row between">
+                <div>
+                  <div class="caption">You can recover</div>
+                  <div class="t1 gold">12.4 GB</div>
+                </div>
+                <div class="mascot sm" data-mascot="peek"></div>
+              </div>
+              <div class="row between">
+                <div class="caption">48 groups · Sorted by size</div>
+                <div class="gap-chips"><span class="chip is-selected">Largest</span><span class="chip">Newest</span></div>
+              </div>
+              <div class="stack-8 grow">
+                <div class="group">
+                  <div class="row between">
+                    <div class="t3" style="font-size:15px">IMG_2841.HEIC</div>
+                    <div class="gold" style="font-weight:650">240 MB</div>
+                  </div>
+                  <div class="caption">2 copies · Downloads, Desktop</div>
+                </div>
+                <div class="group">
+                  <div class="row between">
+                    <div class="t3" style="font-size:15px">Project_Archive.zip</div>
+                    <div class="gold" style="font-weight:650">1.8 GB</div>
+                  </div>
+                  <div class="caption">3 copies · Documents</div>
+                </div>
+                <div class="group">
+                  <div class="row between">
+                    <div class="t3" style="font-size:15px">demo-reel.mov</div>
+                    <div class="gold" style="font-weight:650">4.2 GB</div>
+                  </div>
+                  <div class="caption">2 copies · Movies</div>
+                </div>
+              </div>
+              <div class="bottombar">
+                <div class="caption grow">Select groups to review</div>
+                <button class="btn btn-primary">Review Selected</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag"><span class="tag">Empty</span></div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Results</div></div>
+            <div class="content stack-20 center">
+              <div class="mascot" data-mascot="nap"></div>
+              <div class="t2">Nothing to review</div>
+              <div class="body">No duplicate groups in this scan.</div>
+              <button class="btn btn-primary">Back to Home</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Hover</span>
+            <span class="tag anim">Anim · row lift · chevron fade</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Results</div></div>
+            <div class="content stack-12">
+              <div class="t1 gold">12.4 GB</div>
+              <div class="group is-hover">
+                <div class="row between">
+                  <div class="t3" style="font-size:15px">Project_Archive.zip</div>
+                  <div class="row"><span class="gold" style="font-weight:650">1.8 GB</span><span class="caption">›</span></div>
+                </div>
+                <div class="caption">3 copies · Documents</div>
+              </div>
+              <div class="group">
+                <div class="row between">
+                  <div class="t3" style="font-size:15px">demo-reel.mov</div>
+                  <div class="gold" style="font-weight:650">4.2 GB</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag gold">Selected</span>
+            <span class="tag anim">Anim · teal ring · bottom bar enable</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Results</div></div>
+            <div class="content stack-12">
+              <div class="row between">
+                <div class="t1 gold">12.4 GB</div>
+                <div class="caption teal">2 selected</div>
+              </div>
+              <div class="group is-selected">
+                <div class="row between">
+                  <div class="row"><span class="teal">✓</span><div class="t3" style="font-size:15px">Project_Archive.zip</div></div>
+                  <div class="gold" style="font-weight:650">1.8 GB</div>
+                </div>
+              </div>
+              <div class="group is-selected">
+                <div class="row between">
+                  <div class="row"><span class="teal">✓</span><div class="t3" style="font-size:15px">demo-reel.mov</div></div>
+                  <div class="gold" style="font-weight:650">4.2 GB</div>
+                </div>
+              </div>
+              <div class="group">
+                <div class="row between">
+                  <div class="t3" style="font-size:15px">IMG_2841.HEIC</div>
+                  <div class="gold" style="font-weight:650">240 MB</div>
+                </div>
+              </div>
+              <div class="bottombar">
+                <div class="caption grow">6.0 GB in selection</div>
+                <button class="btn btn-primary">Review Selected</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== 6 DUPLICATE REVIEW ========== -->
+    <section class="section" id="s6">
+      <div class="section-label"><span class="num">06</span><h2>Duplicate review</h2></div>
+      <div class="frames">
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Default</span>
+            <span class="tag anim">Anim · keep/trash crossfade · recommend badge</span>
+          </div>
+          <div class="window tall">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Review · 1 of 48</div></div>
+            <div class="content stack-12">
+              <div class="row between">
+                <div>
+                  <div class="t3">Project_Archive.zip</div>
+                  <div class="caption">3 identical copies · 1.8 GB each</div>
+                </div>
+                <div class="gold" style="font-weight:700;font-size:18px">+3.6 GB</div>
+              </div>
+              <div class="file-dec keep">
+                <div style="width:48px;height:48px;border-radius:8px;background:#2a3333;border:1px solid var(--border)"></div>
+                <div class="grow">
+                  <div class="row"><span class="mint" style="font-size:11px;font-weight:700">KEEP · Recommended</span></div>
+                  <div style="font-weight:600;font-size:14px">Documents/Archives/</div>
+                  <div class="caption">Modified Mar 12 · 1.8 GB</div>
+                </div>
+                <div class="dec-btn">
+                  <span class="on-keep">● Keep</span>
+                  <span>○ Trash</span>
+                </div>
+              </div>
+              <div class="file-dec trash">
+                <div style="width:48px;height:48px;border-radius:8px;background:#2a3333;border:1px solid var(--border)"></div>
+                <div class="grow">
+                  <div style="font-weight:600;font-size:14px">Downloads/</div>
+                  <div class="caption">Modified Jan 3 · 1.8 GB</div>
+                </div>
+                <div class="dec-btn">
+                  <span>○ Keep</span>
+                  <span class="on-trash">● Trash</span>
+                </div>
+              </div>
+              <div class="file-dec trash">
+                <div style="width:48px;height:48px;border-radius:8px;background:#2a3333;border:1px solid var(--border)"></div>
+                <div class="grow">
+                  <div style="font-weight:600;font-size:14px">Desktop/</div>
+                  <div class="caption">Modified Feb 1 · 1.8 GB</div>
+                </div>
+                <div class="dec-btn">
+                  <span>○ Keep</span>
+                  <span class="on-trash">● Trash</span>
+                </div>
+              </div>
+              <div class="bottombar">
+                <button class="btn btn-quiet">← Back</button>
+                <div class="caption grow center">Reveal · Open · Quick Look</div>
+                <button class="btn btn-primary">Next Group →</button>
+              </div>
+            </div>
+          </div>
+          <div class="spec-rail"><span class="dim">mint keep well · coral trash well · one Keep recommended</span></div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag"><span class="tag">Empty · undecided</span></div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Review · 1 of 48</div></div>
+            <div class="content stack-12">
+              <div class="t3">IMG_2841.HEIC</div>
+              <div class="file-dec" style="background:var(--surface-sunken)">
+                <div class="grow">
+                  <div style="font-weight:600">Downloads/</div>
+                  <div class="caption">Choose Keep or Trash</div>
+                </div>
+                <div class="dec-btn">
+                  <span>○ Keep</span>
+                  <span>○ Trash</span>
+                </div>
+              </div>
+              <div class="file-dec" style="background:var(--surface-sunken)">
+                <div class="grow">
+                  <div style="font-weight:600">Desktop/</div>
+                  <div class="caption">Choose Keep or Trash</div>
+                </div>
+                <div class="dec-btn">
+                  <span>○ Keep</span>
+                  <span>○ Trash</span>
+                </div>
+              </div>
+              <div class="bottombar">
+                <div class="caption grow">K Keep · T Trash · Space Quick Look</div>
+                <button class="btn btn-primary is-disabled">Next Group →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Hover</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Review</div></div>
+            <div class="content stack-12">
+              <div class="file-dec keep is-hover">
+                <div class="grow">
+                  <div class="mint" style="font-size:11px;font-weight:700">KEEP · Recommended</div>
+                  <div style="font-weight:600">Documents/Archives/</div>
+                </div>
+                <div class="dec-btn"><span class="on-keep">● Keep</span><span>○ Trash</span></div>
+              </div>
+              <div class="file-dec trash">
+                <div class="grow"><div style="font-weight:600">Downloads/</div></div>
+                <div class="dec-btn"><span>○ Keep</span><span class="on-trash">● Trash</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag gold">Selected · trash intent</span>
+            <span class="tag anim">Anim · coral wash 150ms · recoverable +update</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Review</div></div>
+            <div class="content stack-12">
+              <div class="row between">
+                <div class="caption">Recoverable this group</div>
+                <div class="gold" style="font-weight:700">3.6 GB</div>
+              </div>
+              <div class="file-dec trash" style="border:1px solid rgba(240,113,103,0.45)">
+                <div class="grow">
+                  <div style="font-weight:600">Desktop/</div>
+                  <div class="caption" style="color:var(--coral)">Will move to Trash</div>
+                </div>
+                <div class="dec-btn"><span>○ Keep</span><span class="on-trash">● Trash</span></div>
+              </div>
+              <div class="bottombar">
+                <button class="btn btn-quiet">Apply to Similar</button>
+                <button class="btn btn-primary">Next Group →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== 7 CLEANUP CONFIRMATION ========== -->
+    <section class="section" id="s7">
+      <div class="section-label"><span class="num">07</span><h2>Cleanup confirmation</h2></div>
+      <div class="frames">
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Default</span>
+            <span class="tag anim">Anim · dialog scale .96→1 · coral CTA settle</span>
+          </div>
+          <div class="window tall">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content" style="padding:0;opacity:.3">
+              <div style="padding:32px" class="t2">Review complete</div>
+            </div>
+            <div class="sheet-scrim">
+              <div class="dialog stack-16">
+                <div class="center"><div class="mascot sm" data-mascot="peek"></div></div>
+                <div class="center stack-8">
+                  <div class="t2">Move 72 files to Trash?</div>
+                  <div class="display gold" style="font-size:32px">12.4 GB</div>
+                  <div class="body">You can restore from Trash anytime.</div>
+                </div>
+                <div class="caption center">Kept 48 originals · Exact duplicates only</div>
+                <div class="stack-8">
+                  <button class="btn btn-coral" style="width:100%">Move to Trash</button>
+                  <button class="btn btn-quiet" style="width:100%">Go Back</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag"><span class="tag">Empty · nothing to trash</span></div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content" style="padding:0">
+              <div class="sheet-scrim">
+                <div class="dialog stack-16 center">
+                  <div class="mascot sm" data-mascot="nap"></div>
+                  <div class="t2">Nothing to clean up</div>
+                  <div class="body">Every copy is marked Keep.</div>
+                  <button class="btn btn-primary" style="width:100%">Back to Results</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Hover</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content" style="padding:0">
+              <div class="sheet-scrim">
+                <div class="dialog stack-16">
+                  <div class="t2 center">Move 72 files to Trash?</div>
+                  <div class="display gold center" style="font-size:32px">12.4 GB</div>
+                  <button class="btn btn-coral is-hover" style="width:100%;filter:brightness(1.08)">Move to Trash</button>
+                  <button class="btn btn-quiet is-hover" style="width:100%">Go Back</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag gold">Selected · confirm focus</span>
+            <span class="tag anim">Anim · success → mint check → home</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">CopyCat</div></div>
+            <div class="content" style="padding:0">
+              <div class="sheet-scrim">
+                <div class="dialog stack-16 center">
+                  <div class="mascot sm" data-mascot="celebrate"></div>
+                  <div class="t2 mint">12.4 GB recovered</div>
+                  <div class="body">72 files in Trash · Originals untouched</div>
+                  <button class="btn btn-primary" style="width:100%;outline:2px solid var(--teal-400);outline-offset:3px">Done</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== 8 SETTINGS ========== -->
+    <section class="section" id="s8">
+      <div class="section-label"><span class="num">08</span><h2>Settings</h2></div>
+      <div class="frames">
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag teal">Default</span>
+            <span class="tag anim">Anim · toggle spring · row hover 80ms</span>
+          </div>
+          <div class="window tall">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Settings</div></div>
+            <div class="content stack-8">
+              <div class="caption" style="font-weight:700;letter-spacing:.06em;text-transform:uppercase">Scan</div>
+              <div class="settings-row">
+                <div>
+                  <div style="font-weight:600">Skip files smaller than</div>
+                  <div class="caption">Ignores tiny duplicates</div>
+                </div>
+                <div class="chip is-selected">100 KB</div>
+              </div>
+              <div class="settings-row">
+                <div>
+                  <div style="font-weight:600">Balanced performance</div>
+                  <div class="caption">Kinder to disks while scanning</div>
+                </div>
+                <div class="toggle on"></div>
+              </div>
+              <div class="caption" style="font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:12px">Safety</div>
+              <div class="settings-row">
+                <div>
+                  <div style="font-weight:600">Confirm before Trash</div>
+                  <div class="caption">Always show cleanup dialog</div>
+                </div>
+                <div class="toggle on"></div>
+              </div>
+              <div class="settings-row">
+                <div>
+                  <div style="font-weight:600">Recommend newest Keep</div>
+                  <div class="caption">Pre-selects the latest copy</div>
+                </div>
+                <div class="toggle on"></div>
+              </div>
+              <div class="caption" style="font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:12px">About</div>
+              <div class="settings-row">
+                <div>
+                  <div style="font-weight:600">CopyCat</div>
+                  <div class="caption">Exact duplicates · Twilight Teal</div>
+                </div>
+                <div class="caption">1.0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag"><span class="tag">Empty · defaults</span></div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Settings</div></div>
+            <div class="content">
+              <div class="settings-row">
+                <div><div style="font-weight:600">Balanced performance</div></div>
+                <div class="toggle"></div>
+              </div>
+              <div class="settings-row">
+                <div><div style="font-weight:600">Confirm before Trash</div></div>
+                <div class="toggle on"></div>
+              </div>
+              <div class="footnote" style="margin-top:16px">Factory defaults · Confirm stays on</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag"><span class="tag teal">Hover</span></div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Settings</div></div>
+            <div class="content">
+              <div class="settings-row" style="background:var(--surface-hover);margin:0 -12px;padding:14px 12px;border-radius:10px">
+                <div>
+                  <div style="font-weight:600">Skip files smaller than</div>
+                  <div class="caption">Ignores tiny duplicates</div>
+                </div>
+                <div class="chip is-hover">100 KB</div>
+              </div>
+              <div class="settings-row">
+                <div><div style="font-weight:600">Balanced performance</div></div>
+                <div class="toggle on"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-wrap">
+          <div class="frame-tag">
+            <span class="tag gold">Selected</span>
+            <span class="tag anim">Anim · pill menu · toggle thumb spring</span>
+          </div>
+          <div class="window">
+            <div class="titlebar"><div class="traffic"><i class="r"></i><i class="y"></i><i class="g"></i></div><div class="title">Settings</div></div>
+            <div class="content stack-12">
+              <div class="settings-row">
+                <div><div style="font-weight:600">Skip files smaller than</div></div>
+                <div class="gap-chips">
+                  <span class="chip">0</span>
+                  <span class="chip is-selected">100 KB</span>
+                  <span class="chip">1 MB</span>
+                </div>
+              </div>
+              <div class="settings-row">
+                <div><div style="font-weight:600">Balanced performance</div></div>
+                <div class="toggle on"></div>
+              </div>
+              <div class="settings-row">
+                <div><div style="font-weight:600">Confirm before Trash</div></div>
+                <div class="toggle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TYPE -->
+    <section class="section" id="type">
+      <div class="section-label"><span class="num">Aa</span><h2>Typography</h2></div>
+      <div class="window" style="min-height:auto">
+        <div class="content stack-16">
+          <div class="display">Display 40 / 700 · recoverable</div>
+          <div class="t1">Title 1 · 28 / 650</div>
+          <div class="t2">Title 2 · 22 / 650</div>
+          <div class="t3">Title 3 · 17 / 600</div>
+          <div class="body">Body 15 / 400 · secondary text color</div>
+          <div class="caption">Caption 12 · tertiary</div>
+          <div class="footnote">Footnote 11 · chrome / shortcuts</div>
+          <div class="dim">Mono 10 · layout specs</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYOUT -->
+    <section class="section" id="layout">
+      <div class="section-label"><span class="num">▦</span><h2>Layout</h2></div>
+      <div class="window" style="min-height:auto">
+        <div class="content stack-16">
+          <div class="dim">WINDOW 720 × 560 · TITLEBAR 40 · CONTENT PAD 28×32</div>
+          <div class="dim">RADIUS control 10 · panel 16 · hero stage 22 · pill 999</div>
+          <div class="dim">CTA height 40 · chip 28 · progress 6 · bottom bar top-border</div>
+          <div class="dim">STACK home: mascot → title → body → CTA → chips → footnote</div>
+          <div class="dim">STACK scan: mascot → paw → title → body → progress → eta → cancel</div>
+          <div class="dim">STACK results: gold hero → filters → group list → sticky bottom bar</div>
+          <div class="dim">COLOR one teal hero / gold recoverable only / mint keep / coral trash</div>
+          <div class="dim">MASCOT idle · hunt · found · celebrate · nap · peek — state only</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <script src="assets/mascot.js"></script>
+</body>
+</html>

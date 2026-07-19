@@ -1,0 +1,34 @@
+:root {
+  --teal-400: #14b8a6;
+  --teal-500: #0d9488;
+  --teal-600: #0f766e;
+  --gold: #e8b84a;
+  --mint: #34d399;
+  --coral: #f07167;
+  --violet: #a78bfa;
+
+  --surface-base: #121414;
+  --surface-raised: #1c1f1f;
+  --surface-sunken: #0c0e0e;
+  --surface-hover: #252929;
+  --border: #2a2f2f;
+  --border-strong: #3a4242;
+
+  --text: #f3f5f5;
+  --text-2: #9aa3a3;
+  --text-3: #6b7373;
+
+  --r-control: 10px;
+  --r-panel: 16px;
+  --r-hero: 22px;
+  --r-pill: 999px;
+
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.25);
+
+  --font: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "SF Mono", ui-monospace, Menlo, monospace;
+
+  --board: #0a0b0b;
+  --frame: #1a1d1d;
+}
