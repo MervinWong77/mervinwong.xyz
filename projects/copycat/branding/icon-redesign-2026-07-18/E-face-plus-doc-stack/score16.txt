@@ -1,1 +1,0 @@
-{'white_px': 85, 'teal_px': 163, 'center': (15, 118, 110, 255), 'pass': True}
