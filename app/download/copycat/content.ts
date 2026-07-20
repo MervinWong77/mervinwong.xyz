@@ -28,20 +28,29 @@ export function getCopyCatProduct() {
   };
 }
 
+/** Single source folder — replace PNGs in place; do not hardcode alternate paths. */
+export const SCREENSHOTS_DIR = "/projects/copycat/screenshots" as const;
+
+function screenshot(name: string) {
+  return `${SCREENSHOTS_DIR}/${name}`;
+}
+
+export const homeScreenshotSrc = screenshot("home.png");
+
 export const screenshots = [
   {
     id: "home",
     title: "Home",
     caption: "Choose folders or drives, then start scanning.",
-    src: "/downloads/copycat/screenshots/home.png",
+    src: screenshot("home.png"),
     width: 1080,
     height: 720,
   },
   {
-    id: "scan",
-    title: "Scan",
+    id: "scanning",
+    title: "Scanning",
     caption: "Live progress while CopyCat compares file contents.",
-    src: "/downloads/copycat/screenshots/scan.png",
+    src: screenshot("scanning.png"),
     width: 1080,
     height: 720,
   },
@@ -49,31 +58,23 @@ export const screenshots = [
     id: "review",
     title: "Review",
     caption: "Decide what to keep — with clear recommendations.",
-    src: "/downloads/copycat/screenshots/review.png",
-    width: 1440,
-    height: 900,
+    src: screenshot("review.png"),
+    width: 1080,
+    height: 720,
   },
   {
-    id: "select",
-    title: "Select",
-    caption: "Keep one copy, trash the rest, recover the space.",
-    src: "/downloads/copycat/screenshots/review-select.png",
-    width: 1440,
-    height: 900,
-  },
-  {
-    id: "confirm",
-    title: "Confirm",
+    id: "cleanup",
+    title: "Cleanup",
     caption: "Nothing moves until you approve.",
-    src: "/downloads/copycat/screenshots/confirm.png",
-    width: 1440,
-    height: 900,
+    src: screenshot("cleanup.png"),
+    width: 1080,
+    height: 720,
   },
   {
-    id: "finished",
-    title: "Finished",
-    caption: "Celebrate the space you got back — with undo nearby.",
-    src: "/downloads/copycat/screenshots/finished.png",
+    id: "empty",
+    title: "Empty",
+    caption: "When there’s nothing to clean, CopyCat says so clearly.",
+    src: screenshot("empty.png"),
     width: 1080,
     height: 720,
   },

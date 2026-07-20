@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { DownloadFooter } from "./_components/DownloadFooter";
 import { DownloadHeader } from "./_components/DownloadHeader";
-import { getCopyCatProduct } from "./copycat/content";
+import { getCopyCatProduct, homeScreenshotSrc } from "./copycat/content";
 
 export const metadata: Metadata = {
   title: "Downloads · Mervin Wong",
@@ -106,10 +106,10 @@ export default function DownloadPage() {
                   </div>
                   <div className="relative aspect-[16/10]">
                     <Image
-                      src="/downloads/copycat/screenshots/home.png"
+                      src={homeScreenshotSrc}
                       alt="CopyCat home screen"
                       fill
-                      className="object-cover object-top"
+                      className="object-contain object-top"
                       sizes="(max-width: 1024px) 100vw, 480px"
                       priority
                     />

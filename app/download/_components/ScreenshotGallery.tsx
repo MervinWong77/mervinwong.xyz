@@ -29,15 +29,17 @@ export function ScreenshotGallery({ shots }: { shots: readonly Shot[] }) {
             {current.title}
           </span>
         </div>
-        <div className="relative aspect-[16/10] bg-[#0b0f12]">
+        <div className="bg-[#0b0f12]">
           <Image
-            key={current.id}
+            key={current.src}
             src={current.src}
             alt={`CopyCat ${current.title} screen`}
-            fill
-            className="object-cover object-top"
+            width={current.width}
+            height={current.height}
+            className="h-auto w-full"
             sizes="(max-width: 1100px) 100vw, 1100px"
             priority={active === 0}
+            unoptimized
           />
         </div>
       </div>

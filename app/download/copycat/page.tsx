@@ -49,11 +49,11 @@ export default function CopyCatDownloadPage() {
         <section className="relative overflow-hidden px-5 pb-16 pt-6 sm:px-8 sm:pb-24 sm:pt-10">
           <div
             aria-hidden
-            className="pointer-events-none absolute right-[8%] top-16 size-[380px] rounded-full bg-[var(--cc-glow)]/25 blur-3xl cc-glow"
+            className="pointer-events-none absolute -right-[2%] top-6 size-[620px] rounded-full bg-[var(--cc-glow)]/28 blur-3xl cc-glow"
           />
 
-          <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
-            <div className="cc-animate-fade-up">
+          <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[0.88fr_1.22fr] lg:gap-4">
+            <div className="cc-animate-fade-up min-w-0">
               <div className="flex items-center gap-4">
                 <Image
                   src={product.assets.icon}
@@ -99,17 +99,17 @@ export default function CopyCatDownloadPage() {
               </p>
             </div>
 
-            <div className="relative isolate mx-auto w-full max-w-md lg:max-w-none cc-animate-fade-up-delay-1">
+            <div className="relative isolate mx-auto w-full max-w-xl overflow-visible lg:max-w-none cc-animate-fade-up-delay-1">
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-x-[12%] top-[18%] aspect-square rounded-full bg-[var(--cc-glow)]/30 blur-3xl cc-glow"
+                className="pointer-events-none absolute inset-x-[2%] top-[4%] aspect-square scale-125 rounded-full bg-[var(--cc-glow)]/32 blur-3xl cc-glow"
               />
               <Image
                 src="/downloads/copycat/mascot/wave.png"
                 alt="CopyCat mascot waving"
-                width={720}
-                height={720}
-                className="relative z-10 mx-auto w-[88%] max-w-[420px] mix-blend-lighten drop-shadow-[0_30px_60px_rgb(0_0_0_/0.55)] cc-float"
+                width={1536}
+                height={1024}
+                className="relative z-10 mx-auto w-full max-w-[720px] mix-blend-lighten drop-shadow-[0_40px_80px_rgb(0_0_0_/0.55)] cc-float lg:max-w-none lg:w-[135%] lg:translate-x-[4%]"
                 priority
               />
             </div>
