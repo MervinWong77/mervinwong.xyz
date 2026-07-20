@@ -20,12 +20,15 @@ export default function DownloadPage() {
       <h1 className="text-3xl font-semibold tracking-tight text-[var(--cc-text)]">
         Downloads
       </h1>
+      <p className="mt-3 text-[var(--cc-text-secondary)]">
+        Available apps and builds.
+      </p>
 
-      <section
-        aria-labelledby="copycat-heading"
-        className="mt-10 rounded-2xl border border-[var(--cc-border)] bg-[var(--cc-surface)]/70 p-5 sm:p-6"
-      >
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+      <section aria-labelledby="copycat-heading" className="mt-10">
+        <Link
+          href="/download/copycat"
+          className="group flex flex-col gap-5 rounded-2xl border border-[var(--cc-border)] bg-[var(--cc-surface)]/70 p-5 transition hover:border-[var(--cc-primary)]/40 hover:bg-[var(--cc-surface-hover)] sm:flex-row sm:items-center sm:justify-between sm:p-6"
+        >
           <div className="flex items-center gap-4">
             <Image
               src={release.icon}
@@ -46,27 +49,15 @@ export default function DownloadPage() {
                 {release.summary}
               </p>
               <p className="mt-2 text-sm text-[var(--cc-text-tertiary)]">
-                v{release.version} · {release.fileSizeLabel}
+                v{release.version}
               </p>
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <a
-              href={release.href}
-              download={release.filename}
-              className="inline-flex h-10 items-center justify-center rounded-xl bg-[var(--cc-primary)] px-4 text-sm font-semibold text-white transition hover:bg-[var(--cc-primary-hover)]"
-            >
-              Download
-            </a>
-            <Link
-              href="/download/copycat"
-              className="inline-flex h-10 items-center justify-center rounded-xl border border-[var(--cc-border)] px-4 text-sm font-medium text-[var(--cc-text-secondary)] transition hover:border-[var(--cc-primary)]/40 hover:text-[var(--cc-text)]"
-            >
-              Details
-            </Link>
-          </div>
-        </div>
+          <span className="inline-flex h-10 items-center justify-center self-start rounded-xl border border-[var(--cc-border)] px-4 text-sm font-medium text-[var(--cc-text-secondary)] transition group-hover:border-[var(--cc-primary)]/40 group-hover:text-[var(--cc-text)] sm:self-auto">
+            Details
+          </span>
+        </Link>
       </section>
     </main>
   );
