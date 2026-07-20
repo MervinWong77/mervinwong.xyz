@@ -365,7 +365,7 @@ export default function CopyCatDownloadPage() {
 
         {/* Closing CTA */}
         <section className="border-t border-[var(--cc-border)]/60 px-5 py-20 sm:px-8">
-          <div className="relative isolate mx-auto flex w-full max-w-6xl flex-col items-center overflow-visible rounded-3xl border border-[var(--cc-border)] bg-[var(--cc-surface)]/60 px-6 py-14 text-center sm:px-10">
+          <div className="relative isolate mx-auto flex w-full max-w-6xl flex-col items-center overflow-hidden rounded-3xl border border-[var(--cc-border)] bg-[var(--cc-surface)]/60 px-6 py-14 text-center sm:px-10">
             <div
               aria-hidden
               className="cc-cta-glow pointer-events-none absolute inset-x-[18%] -top-6 h-44"

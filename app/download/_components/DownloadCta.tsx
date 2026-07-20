@@ -6,7 +6,7 @@ type DownloadCtaProps = {
   size?: "md" | "lg";
 };
 
-const MACOS_DOWNLOAD_ICON = "/projects/copycat/icons/macos-download.svg";
+const DOWNLOAD_ICON = "/projects/copycat/icons/download.svg";
 
 export function DownloadCta({
   href,
@@ -20,8 +20,7 @@ export function DownloadCta({
       ? "h-14 px-7 text-[15px] gap-2.5"
       : "h-11 px-5 text-sm gap-2";
 
-  const iconClass =
-    size === "lg" ? "size-[18px]" : "size-4";
+  const iconClass = size === "lg" ? "size-[18px]" : "size-4";
 
   return (
     <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
@@ -32,7 +31,7 @@ export function DownloadCta({
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={MACOS_DOWNLOAD_ICON}
+          src={DOWNLOAD_ICON}
           alt=""
           width={18}
           height={18}
