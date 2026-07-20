@@ -365,18 +365,26 @@ export default function CopyCatDownloadPage() {
 
         {/* Closing CTA */}
         <section className="border-t border-[var(--cc-border)]/60 px-5 py-20 sm:px-8">
-          <div className="relative isolate mx-auto flex w-full max-w-6xl flex-col items-center overflow-hidden rounded-3xl border border-[var(--cc-border)] bg-[var(--cc-surface)]/60 px-6 py-14 text-center sm:px-10">
+          <div className="relative isolate mx-auto flex w-full max-w-6xl flex-col items-center overflow-visible rounded-3xl border border-[var(--cc-border)] bg-[var(--cc-surface)]/60 px-6 py-14 text-center sm:px-10">
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-x-1/4 top-0 h-40 rounded-full bg-[var(--cc-glow)]/20 blur-3xl"
+              className="cc-cta-glow pointer-events-none absolute inset-x-[18%] -top-6 h-44"
             />
-            <Image
-              src="/downloads/copycat/mascot/idle.png"
-              alt=""
-              width={180}
-              height={180}
-              className="relative z-10 h-28 w-auto object-contain mix-blend-lighten"
-            />
+            <div className="relative z-10 flex justify-center">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute left-1/2 top-[48%] size-[7rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0b0f12]/55 blur-xl"
+              />
+              <Image
+                src="/downloads/copycat/mascot/idle.png"
+                alt=""
+                width={320}
+                height={214}
+                sizes="124px"
+                quality={90}
+                className="cc-cta-mascot relative z-10 h-[7.75rem] w-auto object-contain"
+              />
+            </div>
             <h2 className="relative z-10 mt-4 text-2xl font-semibold tracking-tight text-[var(--cc-text)] sm:text-3xl">
               Ready when you are
             </h2>
