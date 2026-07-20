@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <!-- Full geometric sitting cat -->
+  <path fill="#111111" d="
+    M34,40
+    L44,16 L56,38
+    C74,36 88,52 86,72
+    L86,102
+    C86,112 78,118 66,118
+    L42,118
+    C32,118 26,110 26,100
+    L26,70
+    C26,52 28,44 34,40 Z
+    M86,78
+    C104,78 114,92 108,104
+    C102,116 88,116 82,108
+    C94,110 102,100 98,90
+    C94,80 90,78 86,78 Z"/>
+  <!-- Negative sheets in torso -->
+  <rect x="40" y="62" width="24" height="30" rx="4" fill="#FFFFFF"/>
+  <rect x="50" y="70" width="24" height="30" rx="4" fill="#FFFFFF"/>
+
+</svg>

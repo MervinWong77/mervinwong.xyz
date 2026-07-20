@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <!-- Back doc with fold -->
+  <path fill="#111111" d="M42,22 H86 L102,38 V96 C102,102 98,106 92,106 H42 C36,106 32,102 32,96 V32 C32,26 36,22 42,22 Z"/>
+  <path fill="#FFFFFF" d="M86,22 L86,38 L102,38 Z"/>
+  <!-- Front doc with ears + fold -->
+  <path fill="#111111" d="M24,42
+    C24,36 28,32 34,32
+    L48,32 L55,20 L62,32 L69,20 L76,32
+    L80,32 L96,48 V112
+    C96,118 92,122 86,122 H34
+    C28,122 24,118 24,112 Z"/>
+  <path fill="#FFFFFF" d="M80,32 L80,48 L96,48 Z"/>
+</svg>

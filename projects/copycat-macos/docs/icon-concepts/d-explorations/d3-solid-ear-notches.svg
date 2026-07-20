@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <rect x="40" y="24" width="64" height="78" rx="10" fill="#111111"/>
+  <!-- Front sheet: V notches cut into top edge -->
+  <path fill="#111111" d="M28,44
+    C28,38 32,34 38,34
+    L48,34 L55,48 L62,34 L69,48 L76,34
+    L90,34
+    C96,34 100,38 100,44
+    L100,110
+    C100,116 96,120 90,120
+    L38,120
+    C32,120 28,116 28,110
+    Z"/>
+</svg>

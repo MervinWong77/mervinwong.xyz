@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <!-- Soft round head + sharp ears -->
+  <circle cx="64" cy="78" r="40" fill="#111111"/>
+  <path fill="#111111" d="M28,70 L40,28 L56,70 Z"/>
+  <path fill="#111111" d="M72,70 L88,28 L100,70 Z"/>
+  <rect x="38" y="72" width="26" height="20" rx="5" fill="#FFFFFF"/>
+  <rect x="50" y="78" width="26" height="20" rx="5" fill="#FFFFFF"/>
+
+</svg>

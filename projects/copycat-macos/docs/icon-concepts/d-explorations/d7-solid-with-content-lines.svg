@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <rect x="42" y="24" width="62" height="76" rx="10" fill="#111111"/>
+  <path fill="#111111" d="M26,42
+    C26,36 30,32 36,32
+    L50,32 L57,20 L64,32 L71,20 L78,32
+    L86,32
+    C92,32 96,36 96,42
+    L96,110
+    C96,116 92,120 86,120
+    L36,120
+    C30,120 26,116 26,110
+    Z"/>
+  <rect x="38" y="60" width="46" height="5" rx="2.5" fill="#FFFFFF"/>
+  <rect x="38" y="72" width="38" height="5" rx="2.5" fill="#FFFFFF"/>
+  <rect x="38" y="84" width="30" height="5" rx="2.5" fill="#FFFFFF"/>
+</svg>

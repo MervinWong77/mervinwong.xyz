@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <!-- Cat head -->
+  <path fill="#111111" d="M28,52
+    L40,22 L54,48
+    L64,48
+    L74,22 L86,52
+    C102,58 110,74 108,92
+    C106,112 88,118 64,118
+    C40,118 22,112 20,92
+    C18,74 22,58 28,52 Z"/>
+  <!-- Eyes: overlapping rounded rects (knockout) -->
+  <rect x="36" y="68" width="28" height="22" rx="6" fill="#FFFFFF"/>
+  <rect x="48" y="74" width="28" height="22" rx="6" fill="#FFFFFF"/>
+
+</svg>

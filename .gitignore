@@ -39,3 +39,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# CopyCat macOS / Xcode (projects/copycat-macos)
+DerivedData/
+.build/
+**/.build/
+xcuserdata/
+build/
+*.xcuserstate
+*.xcuserdatad
+*.xccheckout
+*.xcscmblueprint
+
+# Temporary snapshot / validation folders
+.tmp/
+**/.tmp/
+.copycat-*/
+copycat-*-snapshots/
+copycat-visual-size/
+copycat-placement/
+copycat-review-workflow/
+copycat-glow/

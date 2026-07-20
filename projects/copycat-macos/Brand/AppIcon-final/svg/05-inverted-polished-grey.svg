@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- App icon 05 polished. Brand-mark path data copied from frozen SVG; geometry unchanged. -->
+  <rect width="1024" height="1024" rx="240" ry="240" fill="#262626"/>
+  <g fill="#F5F5F5" transform="translate(133.3,149.3) scale(0.728)">
+  <g transform="translate(8, 18)">
+    <path d="M417.0,230.0 L459.0,54.0 L495.0,230.0 L637.0,230.0 L673.0,54.0 L715.0,230.0 C874.0,238.0 894.0,448.0 866.0,498.0 C866.0,770.0 266.0,770.0 266.0,498.0 C238.0,448.0 258.0,238.0 417.0,230.0 Z"/>
+    <path d="M321.0,300.0 L363.0,124.0 L399.0,300.0 L541.0,300.0 L577.0,124.0 L619.0,300.0 C778.0,308.0 798.0,518.0 770.0,568.0 C770.0,840.0 170.0,840.0 170.0,568.0 C142.0,518.0 162.0,308.0 321.0,300.0 Z"/>
+  </g>
+  </g>
+</svg>

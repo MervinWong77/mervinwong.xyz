@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <!-- Back cat -->
+  <g fill="#111111" transform="translate(14,-4)">
+    <path d="M24,48 L34,22 L46,46 L58,46 L70,22 L80,48
+      C92,56 96,72 94,88 C92,104 76,110 52,110 C28,110 12,104 10,88
+      C8,72 12,56 24,48 Z"/>
+  </g>
+  <!-- Front cat -->
+  <g fill="#111111" transform="translate(-6,8)">
+    <path d="M24,48 L34,22 L46,46 L58,46 L70,22 L80,48
+      C92,56 96,72 94,88 C92,104 76,110 52,110 C28,110 12,104 10,88
+      C8,72 12,56 24,48 Z"/>
+  </g>
+
+</svg>

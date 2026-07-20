@@ -1,0 +1,51 @@
+name: CopyCat
+options:
+  bundleIdPrefix: xyz.mervinwong
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+packages:
+  CopyCatEngine:
+    path: Packages/CopyCatEngine
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+
+targets:
+  CopyCat:
+    type: application
+    platform: macOS
+    sources:
+      - path: CopyCat
+        excludes:
+          - "**/*.entitlements"
+    resources:
+      - path: CopyCat/Resources/Assets.xcassets
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: xyz.mervinwong.copycat
+        PRODUCT_NAME: CopyCat
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: CopyCat
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        INFOPLIST_KEY_NSHumanReadableCopyright: "Copyright © 2026 Mervin Wong"
+        CODE_SIGN_ENTITLEMENTS: CopyCat/CopyCat.entitlements
+        ENABLE_HARDENED_RUNTIME: YES
+        ENABLE_APP_SANDBOX: YES
+        ENABLE_USER_SELECTED_FILES: readonly
+        COMBINE_HIDPI_IMAGES: YES
+        SWIFT_STRICT_CONCURRENCY: complete
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGNING_ALLOWED: YES
+        DEVELOPMENT_TEAM: ""
+    dependencies:
+      - package: CopyCatEngine
+        product: CopyCatEngine
+    scheme:
+      testTargets: []

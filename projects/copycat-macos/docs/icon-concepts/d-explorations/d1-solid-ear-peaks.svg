@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" fill="#FFFFFF"/>
+  <!-- Back sheet -->
+  <rect x="40" y="22" width="64" height="78" rx="10" fill="#111111"/>
+  <!-- Front sheet with ear peaks -->
+  <path fill="#111111" d="M34,48
+    C34,42 38,38 44,38
+    L52,38 L58,24 L64,38 L70,24 L76,38
+    L84,38
+    C90,38 94,42 94,48
+    L94,108
+    C94,114 90,118 84,118
+    L44,118
+    C38,118 34,114 34,108
+    Z"/>
+</svg>

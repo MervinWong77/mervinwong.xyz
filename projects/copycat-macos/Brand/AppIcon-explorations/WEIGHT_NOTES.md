@@ -1,0 +1,12 @@
+# Visual weight notes (avg luminance 0=black 255=white, 128px crops)
+- Finder: 100.0
+- Preview: 94.3
+- Xcode: 73.4
+- CopyCat 01-light-squircle: 204.2
+- CopyCat 02-embossed-tile: 214.5
+- CopyCat 03-negative-cutout: 79.7
+- CopyCat 04-subtle-depth: 207.9
+- CopyCat 05-inverted-plate: 78.0
+- CopyCat 06-minimal-utility: 220.0
+- CopyCat 07-mid-grey-plate: 161.2
+- CopyCat 08-charcoal-quiet: 87.4
