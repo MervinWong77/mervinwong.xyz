@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { APP_ICON } from "../copycat/release";
 
 type DownloadHeaderProps = {
   brandHref?: string;
   brandLabel?: string;
   ctaHref?: string;
   ctaLabel?: string;
+  ctaDownload?: string;
 };
 
 export function DownloadHeader({
@@ -13,6 +15,7 @@ export function DownloadHeader({
   brandLabel = "Downloads",
   ctaHref,
   ctaLabel = "Download",
+  ctaDownload,
 }: DownloadHeaderProps) {
   return (
     <header className="relative z-20 mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-6 sm:px-8">
@@ -23,7 +26,7 @@ export function DownloadHeader({
         {brandHref.includes("copycat") ? (
           <>
             <Image
-              src="/downloads/copycat/brand/app-icon-128.png"
+              src={APP_ICON}
               alt=""
               width={32}
               height={32}
@@ -48,12 +51,22 @@ export function DownloadHeader({
           All downloads
         </Link>
         {ctaHref ? (
-          <Link
-            href={ctaHref}
-            className="rounded-xl bg-[var(--cc-primary)] px-3.5 py-2 font-semibold text-white shadow-[0_8px_24px_rgb(34_184_170_/0.22)] transition hover:bg-[var(--cc-primary-hover)]"
-          >
-            {ctaLabel}
-          </Link>
+          ctaDownload ? (
+            <a
+              href={ctaHref}
+              download={ctaDownload}
+              className="rounded-xl bg-[var(--cc-primary)] px-3.5 py-2 font-semibold text-white shadow-[0_8px_24px_rgb(34_184_170_/0.22)] transition hover:bg-[var(--cc-primary-hover)]"
+            >
+              {ctaLabel}
+            </a>
+          ) : (
+            <Link
+              href={ctaHref}
+              className="rounded-xl bg-[var(--cc-primary)] px-3.5 py-2 font-semibold text-white shadow-[0_8px_24px_rgb(34_184_170_/0.22)] transition hover:bg-[var(--cc-primary-hover)]"
+            >
+              {ctaLabel}
+            </Link>
+          )
         ) : null}
       </nav>
     </header>

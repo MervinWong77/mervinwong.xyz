@@ -1,24 +1,32 @@
-export const copycatProduct = {
-  name: "CopyCat",
-  tagline: "Find your hidden copies.",
-  description:
-    "A premium macOS companion that finds exact duplicate files, shows what you can recover, and only moves what you approve to Trash.",
-  shortDescription:
-    "Exact duplicate finder for macOS — recover storage without losing the files that matter.",
-  version: "0.1.0",
-  build: 1,
-  platform: "macOS",
-  minOs: "macOS 14 Sonoma",
-  downloadAvailable: false,
-  downloadUrl: "/downloads/copycat/latest/CopyCat.dmg",
-  downloadFilename: "CopyCat.dmg",
-  releaseDateLabel: "Coming soon",
-  assets: {
-    icon: "/downloads/copycat/brand/app-icon-512.png",
-    iconLarge: "/downloads/copycat/brand/app-icon-1024.png",
-    brandMark: "/downloads/copycat/brand/brand-mark-white.svg",
-  },
-} as const;
+import { APP_ICON, getArtifactMeta } from "./release";
+
+export function getCopyCatProduct() {
+  const artifact = getArtifactMeta();
+
+  return {
+    name: "CopyCat",
+    tagline: "Find your hidden copies.",
+    description:
+      "A premium macOS companion that finds exact duplicate files, shows what you can recover, and only moves what you approve to Trash.",
+    shortDescription:
+      "Exact duplicate finder for macOS — recover storage without losing the files that matter.",
+    version: "0.1.0",
+    build: 1,
+    platform: "macOS",
+    minOs: "macOS 14 Sonoma",
+    status: "Private beta",
+    releaseDateLabel: "July 20, 2026",
+    downloadUrl: artifact.href,
+    downloadFilename: artifact.filename,
+    fileSizeLabel: artifact.fileSizeLabel,
+    sha256: artifact.sha256,
+    assets: {
+      icon: APP_ICON,
+      iconLarge: APP_ICON,
+      brandMark: "/downloads/copycat/brand/brand-mark-white.svg",
+    },
+  };
+}
 
 export const screenshots = [
   {
@@ -114,15 +122,18 @@ export const requirements = [
   { label: "macOS", value: "14 Sonoma or later" },
   { label: "Chip", value: "Apple silicon or Intel" },
   { label: "Disk", value: "About 50 MB for the app" },
-  { label: "Permissions", value: "Folder access for the locations you choose to scan" },
+  {
+    label: "Permissions",
+    value: "Folder access for the locations you choose to scan",
+  },
   { label: "Network", value: "Not required — fully offline" },
 ] as const;
 
 export const changelog = [
   {
     version: "0.1.0",
-    date: "Preview",
-    title: "First public preview",
+    date: "July 20, 2026",
+    title: "Private beta",
     items: [
       "Exact duplicate detection via size filtering and full SHA-256 verification",
       "Home flow for choosing folders and drives",
@@ -157,7 +168,6 @@ export const faqs = [
   },
   {
     question: "Which Macs are supported?",
-    answer:
-      "macOS 14 Sonoma or later, on Apple silicon or Intel Macs.",
+    answer: "macOS 14 Sonoma or later, on Apple silicon or Intel Macs.",
   },
 ] as const;

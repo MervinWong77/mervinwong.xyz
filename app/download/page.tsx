@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { DownloadFooter } from "./_components/DownloadFooter";
 import { DownloadHeader } from "./_components/DownloadHeader";
-import { copycatProduct } from "./copycat/content";
+import { getCopyCatProduct } from "./copycat/content";
 
 export const metadata: Metadata = {
   title: "Downloads · Mervin Wong",
@@ -17,6 +17,8 @@ export const metadata: Metadata = {
 };
 
 export default function DownloadPage() {
+  const product = getCopyCatProduct();
+
   return (
     <>
       <DownloadHeader brandHref="/download" brandLabel="Downloads" />
@@ -56,7 +58,7 @@ export default function DownloadPage() {
               <div className="relative z-10">
                 <div className="flex items-center gap-4">
                   <Image
-                    src={copycatProduct.assets.icon}
+                    src={product.assets.icon}
                     alt="CopyCat app icon"
                     width={72}
                     height={72}
@@ -68,29 +70,29 @@ export default function DownloadPage() {
                       Featured
                     </p>
                     <h3 className="mt-1 text-2xl font-semibold tracking-tight text-[var(--cc-text)] sm:text-3xl">
-                      {copycatProduct.name}
+                      {product.name}
                     </h3>
                   </div>
                 </div>
 
                 <p className="mt-5 max-w-lg text-base leading-relaxed text-[var(--cc-text-secondary)]">
-                  {copycatProduct.shortDescription}
+                  {product.shortDescription}
                 </p>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[var(--cc-text-tertiary)]">
                   <span className="rounded-lg border border-[var(--cc-border)] bg-[var(--cc-bg-top)]/60 px-2.5 py-1">
-                    {copycatProduct.platform}
+                    {product.platform}
                   </span>
                   <span className="rounded-lg border border-[var(--cc-border)] bg-[var(--cc-bg-top)]/60 px-2.5 py-1">
-                    v{copycatProduct.version}
+                    v{product.version}
                   </span>
                   <span className="rounded-lg border border-[var(--cc-border)] bg-[var(--cc-bg-top)]/60 px-2.5 py-1">
-                    {copycatProduct.minOs}+
+                    {product.minOs}+
                   </span>
                 </div>
 
                 <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--cc-primary-hover)] transition group-hover:gap-2.5">
-                  View product page
+                  Details
                   <ArrowUpRight className="size-4" aria-hidden />
                 </span>
               </div>
@@ -116,21 +118,6 @@ export default function DownloadPage() {
               </div>
             </div>
           </Link>
-        </section>
-
-        <section
-          aria-labelledby="more-heading"
-          className="mt-10 cc-animate-fade-up-delay-2"
-        >
-          <h2
-            id="more-heading"
-            className="text-sm font-medium text-[var(--cc-text-tertiary)]"
-          >
-            More coming later
-          </h2>
-          <p className="mt-2 max-w-md text-sm text-[var(--cc-text-secondary)]">
-            Additional apps and tools will show up here as they ship.
-          </p>
         </section>
       </main>
 

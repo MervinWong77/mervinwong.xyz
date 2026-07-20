@@ -8,36 +8,40 @@ import { FaqList } from "../_components/FaqList";
 import { ScreenshotGallery } from "../_components/ScreenshotGallery";
 import {
   changelog,
-  copycatProduct,
   faqs,
   features,
+  getCopyCatProduct,
   requirements,
   screenshots,
 } from "./content";
 
-export const metadata: Metadata = {
-  title: "Download CopyCat · Mervin Wong",
-  description: copycatProduct.description,
-  robots: {
-    index: false,
-    follow: false,
-  },
-  openGraph: {
-    title: "CopyCat for macOS",
-    description: copycatProduct.shortDescription,
-    images: [copycatProduct.assets.iconLarge],
-  },
-};
+export function generateMetadata(): Metadata {
+  const product = getCopyCatProduct();
+  return {
+    title: "Download CopyCat · Mervin Wong",
+    description: product.description,
+    robots: {
+      index: false,
+      follow: false,
+    },
+    openGraph: {
+      title: "CopyCat for macOS",
+      description: product.shortDescription,
+      images: [product.assets.iconLarge],
+    },
+  };
+}
 
 export default function CopyCatDownloadPage() {
+  const product = getCopyCatProduct();
+
   return (
     <>
       <DownloadHeader
         brandHref="/download/copycat"
-        ctaHref="#download"
-        ctaLabel={
-          copycatProduct.downloadAvailable ? "Download" : "Coming soon"
-        }
+        ctaHref={product.downloadUrl}
+        ctaLabel="Download"
+        ctaDownload={product.downloadFilename}
       />
 
       <main>
@@ -52,7 +56,7 @@ export default function CopyCatDownloadPage() {
             <div className="cc-animate-fade-up">
               <div className="flex items-center gap-4">
                 <Image
-                  src={copycatProduct.assets.icon}
+                  src={product.assets.icon}
                   alt="CopyCat app icon"
                   width={88}
                   height={88}
@@ -61,10 +65,10 @@ export default function CopyCatDownloadPage() {
                 />
                 <div>
                   <p className="text-sm font-medium text-[var(--cc-text-secondary)]">
-                    {copycatProduct.platform} · v{copycatProduct.version}
+                    {product.platform} · v{product.version}
                   </p>
                   <h1 className="mt-1 text-4xl font-semibold tracking-tight text-[var(--cc-text)] sm:text-5xl">
-                    {copycatProduct.name}
+                    {product.name}
                   </h1>
                 </div>
               </div>
@@ -74,21 +78,24 @@ export default function CopyCatDownloadPage() {
                 <span className="text-[var(--cc-primary-hover)]">copies.</span>
               </h2>
               <p className="mt-4 max-w-lg text-base leading-relaxed text-[var(--cc-text-secondary)] sm:text-lg">
-                {copycatProduct.description}
+                {product.description}
               </p>
 
               <div id="download" className="mt-8 scroll-mt-28">
                 <DownloadCta
-                  available={copycatProduct.downloadAvailable}
-                  href={copycatProduct.downloadUrl}
-                  version={copycatProduct.version}
-                  filename={copycatProduct.downloadFilename}
+                  href={product.downloadUrl}
+                  version={product.version}
+                  filename={product.downloadFilename}
+                  fileSizeLabel={product.fileSizeLabel}
                 />
               </div>
 
               <p className="mt-5 text-sm text-[var(--cc-text-tertiary)]">
-                {copycatProduct.minOs} or later · Offline · Moves files to Trash
-                only
+                {product.minOs} or later · Offline · Moves files to Trash only
+              </p>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-[var(--cc-text-tertiary)]">
+                Private beta build. macOS may show a security warning because
+                this build is not yet notarized.
               </p>
             </div>
 
@@ -191,47 +198,66 @@ export default function CopyCatDownloadPage() {
               className="rounded-2xl border border-[var(--cc-border)] bg-[var(--cc-surface)]/50 p-7 sm:p-8"
               aria-labelledby="version-heading"
             >
-              <h2
-                id="version-heading"
-                className="text-xl font-semibold tracking-tight text-[var(--cc-text)]"
-              >
-                Latest version
-              </h2>
+              <div className="flex items-center gap-4">
+                <Image
+                  src={product.assets.icon}
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="size-12 rounded-[12px]"
+                />
+                <h2
+                  id="version-heading"
+                  className="text-xl font-semibold tracking-tight text-[var(--cc-text)]"
+                >
+                  Latest version
+                </h2>
+              </div>
               <dl className="mt-6 space-y-4 text-sm">
                 <div className="flex items-baseline justify-between gap-4 border-b border-[var(--cc-border)]/70 pb-3">
                   <dt className="text-[var(--cc-text-tertiary)]">Version</dt>
                   <dd className="font-medium text-[var(--cc-text)]">
-                    {copycatProduct.version}
+                    {product.version}
                   </dd>
                 </div>
                 <div className="flex items-baseline justify-between gap-4 border-b border-[var(--cc-border)]/70 pb-3">
                   <dt className="text-[var(--cc-text-tertiary)]">Build</dt>
                   <dd className="font-medium text-[var(--cc-text)]">
-                    {copycatProduct.build}
+                    {product.build}
                   </dd>
                 </div>
                 <div className="flex items-baseline justify-between gap-4 border-b border-[var(--cc-border)]/70 pb-3">
                   <dt className="text-[var(--cc-text-tertiary)]">Released</dt>
                   <dd className="font-medium text-[var(--cc-text)]">
-                    {copycatProduct.releaseDateLabel}
+                    {product.releaseDateLabel}
                   </dd>
                 </div>
-                <div className="flex items-baseline justify-between gap-4">
+                <div className="flex items-baseline justify-between gap-4 border-b border-[var(--cc-border)]/70 pb-3">
+                  <dt className="text-[var(--cc-text-tertiary)]">File size</dt>
+                  <dd className="font-medium text-[var(--cc-text)]">
+                    {product.fileSizeLabel}
+                  </dd>
+                </div>
+                <div className="flex items-baseline justify-between gap-4 border-b border-[var(--cc-border)]/70 pb-3">
                   <dt className="text-[var(--cc-text-tertiary)]">Status</dt>
                   <dd className="font-medium text-[var(--cc-gold)]">
-                    {copycatProduct.downloadAvailable
-                      ? "Available"
-                      : "Preview — build publishing soon"}
+                    {product.status}
+                  </dd>
+                </div>
+                <div className="flex flex-col gap-1 pt-1 sm:flex-row sm:justify-between sm:gap-4">
+                  <dt className="text-[var(--cc-text-tertiary)]">SHA-256</dt>
+                  <dd className="break-all font-mono text-xs leading-relaxed text-[var(--cc-text-secondary)] sm:max-w-[70%] sm:text-right">
+                    {product.sha256}
                   </dd>
                 </div>
               </dl>
 
               <div className="mt-8">
                 <DownloadCta
-                  available={copycatProduct.downloadAvailable}
-                  href={copycatProduct.downloadUrl}
-                  version={copycatProduct.version}
-                  filename={copycatProduct.downloadFilename}
+                  href={product.downloadUrl}
+                  version={product.version}
+                  filename={product.downloadFilename}
+                  fileSizeLabel={product.fileSizeLabel}
                   size="md"
                 />
               </div>
@@ -359,10 +385,10 @@ export default function CopyCatDownloadPage() {
             </p>
             <div className="relative z-10 mt-8">
               <DownloadCta
-                available={copycatProduct.downloadAvailable}
-                href={copycatProduct.downloadUrl}
-                version={copycatProduct.version}
-                filename={copycatProduct.downloadFilename}
+                href={product.downloadUrl}
+                version={product.version}
+                filename={product.downloadFilename}
+                fileSizeLabel={product.fileSizeLabel}
               />
             </div>
             <p className="relative z-10 mt-6 text-sm text-[var(--cc-text-tertiary)]">
