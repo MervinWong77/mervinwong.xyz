@@ -94,8 +94,9 @@ export default function CopyCatDownloadPage() {
                 {product.minOs} or later · Offline · Moves files to Trash only
               </p>
               <p className="mt-2 max-w-md text-sm leading-relaxed text-[var(--cc-text-tertiary)]">
-                Private beta build. macOS may show a security warning because
-                this build is not yet notarized.
+                Private beta — not notarized yet. If macOS shows “CopyCat Not
+                Opened”, click Done, then go to System Settings → Privacy &amp;
+                Security → Open Anyway. After that it launches normally.
               </p>
             </div>
 
