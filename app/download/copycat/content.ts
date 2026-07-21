@@ -15,7 +15,7 @@ export function getCopyCatProduct() {
     platform: "macOS",
     minOs: "macOS 14 Sonoma",
     status: "Private beta",
-    releaseDateLabel: "July 20, 2026",
+    releaseDateLabel: "July 21, 2026",
     downloadUrl: artifact.href,
     downloadFilename: artifact.filename,
     fileSizeLabel: artifact.fileSizeLabel,
