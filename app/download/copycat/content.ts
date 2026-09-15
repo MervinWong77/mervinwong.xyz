@@ -11,11 +11,11 @@ export function getCopyCatProduct() {
     shortDescription:
       "Exact duplicate finder for macOS — recover storage without losing the files that matter.",
     version: "0.1.0",
-    build: 1,
+    build: 2,
     platform: "macOS",
     minOs: "macOS 14 Sonoma",
     status: "Private beta",
-    releaseDateLabel: "July 21, 2026",
+    releaseDateLabel: "September 15, 2026",
     downloadUrl: artifact.href,
     downloadFilename: artifact.filename,
     fileSizeLabel: artifact.fileSizeLabel,
@@ -133,7 +133,7 @@ export const requirements = [
 export const changelog = [
   {
     version: "0.1.0",
-    date: "July 20, 2026",
+    date: "September 15, 2026",
     title: "Private beta",
     items: [
       "Exact duplicate detection via size filtering and full SHA-256 verification",
@@ -141,6 +141,8 @@ export const changelog = [
       "Animated scanning experience with live discovery metrics",
       "Duplicate review with keep recommendations",
       "Safe cleanup to Trash with confirmation and undo",
+      "Quick Clean for caches, logs, developer leftovers, and disposable Cursor caches",
+      "Safe / Review / Protected classification — Clean Safe Items does not touch persistent Cursor state or arbitrary /tmp files",
       "Twilight Teal dark interface with CopyCat mascot states",
     ],
   },
