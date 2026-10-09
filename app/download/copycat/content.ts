@@ -15,7 +15,7 @@ export function getCopyCatProduct() {
     platform: "macOS",
     minOs: "macOS 14 Sonoma",
     status: "Private beta",
-    releaseDateLabel: "September 15, 2026",
+    releaseDateLabel: "October 10, 2026",
     downloadUrl: artifact.href,
     downloadFilename: artifact.filename,
     fileSizeLabel: artifact.fileSizeLabel,
@@ -133,7 +133,7 @@ export const requirements = [
 export const changelog = [
   {
     version: "0.1.0",
-    date: "September 15, 2026",
+    date: "October 10, 2026",
     title: "Private beta",
     items: [
       "Exact duplicate detection via size filtering and full SHA-256 verification",
@@ -144,6 +144,7 @@ export const changelog = [
       "Quick Clean for caches, logs, developer leftovers, and disposable Cursor caches",
       "Safe / Review / Protected classification — Clean Safe Items does not touch persistent Cursor state or arbitrary /tmp files",
       "Twilight Teal dark interface with CopyCat mascot states",
+      "External-drive duplicate cleanup and Deep Clean confirmations restored",
     ],
   },
 ] as const;
