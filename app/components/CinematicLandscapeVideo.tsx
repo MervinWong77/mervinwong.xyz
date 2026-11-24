@@ -82,7 +82,7 @@ export function CinematicLandscapeVideo() {
 
   return (
     <section
-      id="yunnan"
+      id="life-in-motion"
       ref={sectionRef}
       className="mt-16 scroll-mt-8 md:mt-20"
       aria-labelledby="yunnan-video-caption"

@@ -116,7 +116,7 @@ export function getSiteUrl() {
 
 export function navigationSections(): PageSection[] {
   const sections: PageSection[] = [
-    { id: "yunnan", label: "Yunnan" },
+    { id: "life-in-motion", label: "Life in Motion" },
     { id: "about", label: "About" },
   ]
 

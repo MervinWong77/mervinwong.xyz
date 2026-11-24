@@ -1,8 +1,5 @@
-import { socialLinks } from "../content/site"
 import { SiteNav } from "./SiteNav"
 import { btnSecondary, display, positioning } from "./ui"
-
-const linkedIn = socialLinks[0]
 
 export function Hero() {
   return (
@@ -40,12 +37,12 @@ export function Hero() {
           <SiteNav />
         </div>
         <a
-          href={linkedIn.href}
+          href="https://wa.me/60164457335"
           target="_blank"
           rel="noopener noreferrer"
           className={`${btnSecondary} animate-fade-up opacity-0 [animation-delay:400ms]`}
         >
-          Say hello
+          WhatsApp me
         </a>
       </div>
     </header>
