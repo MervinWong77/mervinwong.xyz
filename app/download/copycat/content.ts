@@ -11,11 +11,11 @@ export function getCopyCatProduct() {
     shortDescription:
       "Exact duplicate finder for macOS — recover storage without losing the files that matter.",
     version: "0.1.0",
-    build: 2,
+    build: 3,
     platform: "macOS",
     minOs: "macOS 14 Sonoma",
     status: "Private beta",
-    releaseDateLabel: "October 10, 2026",
+    releaseDateLabel: "November 25, 2026",
     downloadUrl: artifact.href,
     downloadFilename: artifact.filename,
     fileSizeLabel: artifact.fileSizeLabel,
@@ -133,9 +133,10 @@ export const requirements = [
 export const changelog = [
   {
     version: "0.1.0",
-    date: "October 10, 2026",
+    date: "November 25, 2026",
     title: "Private beta",
     items: [
+      "Scan Storage measures known locations in one scan, keeps running projects and unreadable folders out of Trash, and matches confirmation totals to the folders that will move",
       "Exact duplicate detection via size filtering and full SHA-256 verification",
       "Home flow for choosing folders and drives",
       "Animated scanning experience with live discovery metrics",
