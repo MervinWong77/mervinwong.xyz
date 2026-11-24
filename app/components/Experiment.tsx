@@ -32,7 +32,11 @@ export function Experiment() {
                 {experiment.status}
               </p>
             </div>
-            <p className={`${prose} mt-3`}>{experiment.body}</p>
+            <div className={`${prose} mt-3 max-w-none space-y-5`}>
+              {experiment.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
         <Link href={experiment.href} className={`${btnPrimary} shrink-0 self-start lg:self-center`}>

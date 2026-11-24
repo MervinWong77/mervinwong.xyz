@@ -62,7 +62,10 @@ export const interests = [
 export const experiment = {
   id: "experiment",
   label: "Personal experiments",
-  body: "CopyCat is a macOS application I’m building to make file management and digital organization simpler. It started with a practical problem and grew into an ongoing exploration of product design, technology and software development.",
+  paragraphs: [
+    "CopyCat is a macOS utility I’m building to help users understand their storage, find duplicate files and safely reclaim disk space.",
+    "What began as a practical solution to my own storage challenges has become an ongoing exploration of product design, user experience and software development.",
+  ],
   status: "Private beta",
   href: "/download/copycat",
   linkLabel: "Explore CopyCat",
