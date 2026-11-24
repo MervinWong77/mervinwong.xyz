@@ -1,9 +1,11 @@
+import { section, support } from "./ui"
+
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-stone-200/60 pt-10 pb-28 md:mt-32 md:pb-10">
-      <p className="text-center text-sm text-stone-500">
+    <footer className={`${section} border-t border-stone-200 pt-8 pb-10`}>
+      <p data-keep-clear className={`${support} mx-auto w-fit text-center`}>
         © {new Date().getFullYear()} Mervin Wong · Made with care
       </p>
     </footer>
-  );
+  )
 }

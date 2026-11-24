@@ -1,3 +1,5 @@
+import { btnSecondary, iconGlyph, prose, section, sectionTitle, textLink } from "./ui";
+
 function IconInstagram({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -30,6 +32,12 @@ function IconGitHub({ className }: { className?: string }) {
   );
 }
 
+const linkedIn = {
+  label: "LinkedIn",
+  href: "https://www.linkedin.com/in/mervin-wong-ch/",
+  Icon: IconLinkedIn,
+} as const;
+
 const links = [
   {
     label: "Instagram",
@@ -42,11 +50,6 @@ const links = [
     Icon: IconFacebook,
   },
   {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/mervin-wong-ch/",
-    Icon: IconLinkedIn,
-  },
-  {
     label: "GitHub",
     href: "https://github.com/MervinWong77",
     Icon: IconGitHub,
@@ -56,33 +59,53 @@ const links = [
 export function SocialLinks() {
   return (
     <section
-      className="mt-20 md:mt-28"
+      id="connect"
+      className={section}
       aria-labelledby="social-heading"
     >
-      <h2
-        id="social-heading"
-        className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400"
-      >
+      <div data-keep-clear>
+      <h2 id="social-heading" className={sectionTitle}>
         Connect
       </h2>
-      <p className="mt-3 max-w-md text-stone-600">
-        Say hello — I&apos;d love to connect.
+      <p className={`${prose} mt-6`}>
+        Say hello — I&apos;d love to connect. For work,{" "}
+        <a
+          href={linkedIn.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={textLink}
+        >
+          LinkedIn
+        </a>{" "}
+        is the best place to find me.
       </p>
-      <ul className="mt-6 flex flex-wrap gap-3">
+      <ul className="mt-7 flex flex-wrap gap-3">
+        <li>
+          <a
+            href={linkedIn.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={btnSecondary}
+          >
+            <IconLinkedIn className={iconGlyph} />
+            {linkedIn.label}
+          </a>
+        </li>
         {links.map(({ label, href, Icon }) => (
           <li key={label}>
             <a
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 rounded-full border border-stone-200/80 bg-white/80 px-4 py-2.5 text-sm font-medium text-stone-700 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-stone-300 hover:bg-white hover:text-stone-900 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400"
+              className={btnSecondary}
             >
-              <Icon className="h-4 w-4 text-stone-500 transition group-hover:text-stone-800" />
+              <Icon className={iconGlyph} />
               {label}
             </a>
           </li>
         ))}
       </ul>
+      </div>
     </section>
   );
 }

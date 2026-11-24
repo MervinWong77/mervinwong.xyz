@@ -111,6 +111,11 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  caret-color: var(--foreground);
+}
+
+[data-scroll-root] {
+  scrollbar-color: #a8a29e transparent;
 }
 
 ::selection {
@@ -133,4 +138,23 @@ body {
 
 .animate-corner-pixel-float {
   animation: cornerPixelFloat 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.scroll-smooth {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-up,
+  .animate-gentle-float,
+  .animate-soft-drift,
+  .animate-quote-in,
+  .animate-swordsman-float,
+  .animate-corner-pixel-float,
+  .yunnan-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Pause, Play, Volume2, VolumeX } from "lucide-react";
+import { control, iconGlyph } from "./ui";
 
 const VIDEO_ID = "8O-1qB-fxjc";
 const PLAYER_MOUNT_ID = "yt-bg-music-mount";
@@ -74,6 +75,10 @@ export function MusicPlayer() {
         await loadYouTubeIframeApi();
         if (cancelled) return;
 
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
         const YT = (window as Window & { YT?: { Player: YTPlayerConstructor } })
           .YT;
         if (!YT?.Player) return;
@@ -85,7 +90,7 @@ export function MusicPlayer() {
           width: "200",
           height: "200",
           playerVars: {
-            autoplay: 1,
+            autoplay: reduceMotion ? 0 : 1,
             mute: 1,
             loop: 1,
             playlist: VIDEO_ID,
@@ -104,7 +109,12 @@ export function MusicPlayer() {
               playerRef.current = p;
               p.mute();
               setMuted(true);
-              p.playVideo();
+              if (reduceMotion) {
+                p.pauseVideo();
+                setPlaying(false);
+              } else {
+                p.playVideo();
+              }
               setPlayerReady(true);
             },
             onStateChange: (e: { data: number }) => {
@@ -159,20 +169,20 @@ export function MusicPlayer() {
         <div id={PLAYER_MOUNT_ID} />
       </div>
 
-      <div className="pointer-events-none fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8">
-        <div className="pointer-events-auto flex items-center gap-1 rounded-full border border-stone-200/85 bg-white/82 p-1 shadow-[0_16px_36px_-20px_rgba(28,25,23,0.24)] backdrop-blur-md ring-1 ring-white/70">
+      <div className="pointer-events-none">
+        <div data-keep-clear className="pointer-events-auto flex items-center gap-1 rounded-full border border-stone-300 bg-white p-1">
           <button
             type="button"
             disabled={!playerReady}
             onClick={togglePlay}
             aria-pressed={playing}
             aria-label={playing ? "Pause background music" : "Play background music"}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100/80 hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400 disabled:cursor-not-allowed disabled:opacity-40 active:scale-95"
+            className={control}
           >
             {playing ? (
-              <Pause className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />
+              <Pause className={iconGlyph} strokeWidth={1.75} aria-hidden />
             ) : (
-              <Play className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />
+              <Play className={iconGlyph} strokeWidth={1.75} aria-hidden />
             )}
           </button>
           <button
@@ -181,12 +191,12 @@ export function MusicPlayer() {
             onClick={toggleMute}
             aria-pressed={!muted}
             aria-label={muted ? "Unmute background music" : "Mute background music"}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100/80 hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400 disabled:cursor-not-allowed disabled:opacity-40 active:scale-95"
+            className={control}
           >
             {muted ? (
-              <VolumeX className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />
+              <VolumeX className={iconGlyph} strokeWidth={1.75} aria-hidden />
             ) : (
-              <Volume2 className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />
+              <Volume2 className={iconGlyph} strokeWidth={1.75} aria-hidden />
             )}
           </button>
         </div>

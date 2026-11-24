@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useCallback, useState } from "react";
 import { RefreshCw, Sparkle } from "lucide-react";
-
+import { btnSecondary, iconGlyph, label, section, sectionTitle } from "./ui";
 const thoughts = [
   "The room felt quieter after the rain.",
   "Someone nearby was making coffee.",
@@ -91,32 +91,21 @@ export function InteractiveSpot() {
 
   return (
     <section
-      className="mt-20 md:mt-28"
+      id="corner"
+      className={section}
       aria-labelledby="spot-heading"
     >
-      <h2
-        id="spot-heading"
-        className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400"
-      >
+      <h2 id="spot-heading" className={sectionTitle}>
         A little corner
       </h2>
 
-      <div className="mt-6 grid gap-6 md:grid-cols-2 md:gap-8">
+      <div data-keep-clear className="mt-6 grid gap-6 md:grid-cols-2 md:gap-8">
         <div className="relative min-h-[205px] overflow-hidden rounded-2xl border border-stone-200/70 bg-white/70 p-6 shadow-sm ring-1 ring-stone-100/80 backdrop-blur-sm transition hover:shadow-md">
           <div className="flex items-start justify-between gap-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-stone-400">
-              What&apos;s on my mind
-            </p>
+            <p className={label}>What&apos;s on my mind</p>
 
-            <button
-              type="button"
-              onClick={nextThought}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-stone-200/60 bg-white/60 px-3 py-1.5 text-xs font-medium text-stone-600 transition hover:border-stone-300/80 hover:bg-white hover:text-stone-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400"
-            >
-              <RefreshCw
-                className="h-3.5 w-3.5"
-                aria-hidden
-              />
+            <button type="button" onClick={nextThought} className={btnSecondary}>
+              <RefreshCw className={iconGlyph} aria-hidden />
               Another thought
             </button>
           </div>
@@ -144,7 +133,7 @@ export function InteractiveSpot() {
         </div>
 
         <div className="rounded-2xl border border-stone-200/70 bg-gradient-to-br from-white/90 to-stone-50/80 p-6 shadow-sm ring-1 ring-orange-100/40 backdrop-blur-sm transition hover:-translate-y-0.5 hover:shadow-md">
-          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-stone-400">
+          <p className={`${label} flex items-center gap-2`}>
             <Sparkle
               className="h-3.5 w-3.5 text-amber-500"
               aria-hidden

@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
+import { getSiteUrl } from "./content/site";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://mervinwong.xyz";
+const siteUrl = getSiteUrl();
 
 /** Public sitemap — download routes are intentionally excluded. */
 export default function sitemap(): MetadataRoute.Sitemap {
